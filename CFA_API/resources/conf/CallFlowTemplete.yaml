@@ -1,0 +1,204 @@
+simple:
+  call_flow_id: 62271
+  call_flow_name: API Callflow -simple route
+  call_flow_created: null
+  call_flow_status: active
+  repeat_interval: 72
+  call_value: 2
+  channel_id: 7
+  message_enabled: true
+  message: Agency Callflow Message
+  default_ringto: '8018786943'
+  group_id: 25053
+  email_to_notify: sagar.j@moentek.com
+  play_disclaimer: before
+  created_at: null
+  updated_at: '2020-12-09T12:29:25.012Z'
+  voicemail_enabled: true
+  voicemail_rings: 2
+  routable_type: SimpleRoute
+  webhook_enabled: true
+  record_until: '2020-12-24T12:29:25.012Z'
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: 2
+  postcall_ivr_enabled: true
+  postcall_ivr_id: 2
+  spam_threshold: 0
+  spam_filter_enabled: true
+  referral_number: "1234567891"
+  campaign_id: 47535
+  number: {phone_number_id: 1048065, phone_number: 5052883059}
+  isSimultaneous: true
+  overflowNumbers: null
+  number: null
+pool:
+  call_flow_name: API Callflow -number pool
+  call_flow_created: null
+  call_flow_status: active
+  call_value: 2
+  channel_id: 7
+  message_enabled: true
+  message: Agency Callflow Message
+  default_ringto: 8018786943
+  group_id: 0
+  email_to_notify: sagar.j@moentek.com
+  play_disclaimer: before
+  created_at: null
+  updated_at: null
+  voicemail_enabled: true
+  voicemail_rings: 1
+  routable_type: SimpleRoute
+  webhook_enabled: true
+  record_until: null
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: 2
+  postcall_ivr_enabled: true
+  postcall_ivr_id: 1
+  spam_threshold: 0
+  spam_filter_enabled: true
+  referral_number: 1234567891
+  repeat_interval: 72
+  isSimultaneous: true
+  campaign_id: 0
+  overflowNumbers: null
+  number_pool: {
+    pool_name: "Automation Pool",
+    keep_alive_minutes: 60,
+    number_quantity: 2,
+    npa: 801,
+    nxx: 386
+  }
+hangup:
+  call_flow_name: Hang Callflow API - Automation Support
+  call_flow_created: null
+  call_flow_status: active
+  repeat_interval: 72
+  call_value: 0
+  channel_id: 7
+  message_enabled: true
+  message: Agency Callflow Message
+  default_ringto: 'hangup'
+  group_id: 70333
+  email_to_notify: null
+  play_disclaimer: null
+  created_at: null
+  updated_at: '2019-12-14T13:45:12.741Z'
+  voicemail_enabled: false
+  routable_type: SimpleRoute
+  webhook_enabled: false
+  record_until: null
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: null
+  postcall_ivr_enabled: false
+  postcall_ivr_id: 0
+  spam_threshold: 0
+  spam_filter_enabled: false
+  referral_number: null
+  campaign_id: 684
+  number: {phone_number_id: 1863, phone_number: 3853087957,source: 0}
+geo:
+  call_flow_name: Geo Callflow API - Automation Support
+  call_flow_created: null
+  call_flow_status: active
+  repeat_interval: 72
+  call_value: 0
+  channel_id: 7
+  message_enabled: true
+  message: Geo Callflow Message
+  default_ringto: '8018786943'
+  group_id: 70333
+  email_to_notify: null
+  play_disclaimer: null
+  created_at: null
+  updated_at: '2019-12-14T13:45:12.741Z'
+  voicemail_enabled: false
+  routable_type: GeoRoute
+  webhook_enabled: false
+  record_until: null
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: null
+  postcall_ivr_enabled: false
+  postcall_ivr_id: 0
+  spam_threshold: 0
+  spam_filter_enabled: false
+  referral_number: null
+  campaign_id: 684
+  number: {phone_number_id: 1863, phone_number: 3853087957}
+  isSimultaneous: true
+  overflowNumbers: null
+ivr:
+  call_flow_name: API Callflow -ivr route
+  call_flow_created: null
+  call_flow_status: active
+  repeat_interval: 72
+  call_value: 2
+  channel_id: 7
+  message_enabled: true
+  message: IVR Callflow Message
+  default_ringto: '8018786943'
+  group_id: 70333
+  email_to_notify: sagar.j@moentek.com
+  play_disclaimer: before
+  created_at: null
+  updated_at: '2019-12-14T13:45:12.741Z'
+  voicemail_enabled: true
+  voicemail_rings: 3
+  routable_type: IvrRoute2
+  webhook_enabled: true
+  record_until: null
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: 2
+  postcall_ivr_enabled: true
+  postcall_ivr_id: 1
+  spam_threshold: 0
+  spam_filter_enabled: true
+  referral_number: 1234567891
+  campaign_id: 684
+  number: {phone_number_id: 1863, phone_number: 3853087957}
+  ivrs: [{
+    key: 0,
+    name: "Ivr Test",
+    message_enabled: false,
+    message: "test",
+    route_type: "Simple",
+    record_enabled: false,
+    play_disclaimer: "before",
+    target_did: "8018786943"
+  }]
+
+percentage:
+  call_flow_name: Percentage Callflow API - Automation Support
+  call_flow_created: null
+  call_flow_status: active
+  repeat_interval: 72
+  call_value: 0
+  channel_id: 7
+  message_enabled: true
+  message: Percentage Agency Callflow Message
+  default_ringto: '8018786943'
+  group_id: 70333
+  email_to_notify: null
+  play_disclaimer: null
+  created_at: null
+  updated_at: '2019-12-14T13:45:12.741Z'
+  voicemail_enabled: false
+  routable_type: PercentageBasedRoute
+  webhook_enabled: false
+  record_until: null
+  whisper_enabled: true
+  whisper_message: Agency Whisper Message
+  ring_delay: null
+  postcall_ivr_enabled: false
+  postcall_ivr_id: 0
+  spam_threshold: 0
+  spam_filter_enabled: false
+  referral_number: null
+  campaign_id: 684
+  number: {phone_number_id: 1863, phone_number: 3853087957}
+  isSimultaneous: true
+  overflowNumbers: null

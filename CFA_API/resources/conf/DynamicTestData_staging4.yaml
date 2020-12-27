@@ -1,0 +1,163 @@
+convirza:
+  group:
+    agency: {group_id: 4258, group_ext_id: '', group_name: QA automation, group_parent_id: 0,
+      top_group_id: null, billing_id: 4258, address: Pune, city: Salt Lake City,
+      state: UT, zip: '10006', phone_number: '8018786943', industry_id: 1}
+    company: {group_id: 25487, group_ext_id: '', group_name: API Company Group, group_parent_id: 4258,
+      top_group_id: 4258, billing_id: 4258, address: Pune, city: Salt Lake City,
+      state: UT, zip: '10006', phone_number: '6453563807', industry_id: 1}
+    location: {group_id: 25488, group_ext_id: '', group_name: API Location Group,
+      group_parent_id: 25487, top_group_id: 4258, billing_id: 4258, address: Pune,
+      city: Salt Lake City, state: UT, zip: '10006', phone_number: '2666449900', industry_id: 1}
+  user:
+    agency: {id: '4522', first_name: Automation, last_name: Support, email: qaautomation@yopmail.com,
+      phone_number: '', role: Admin, status: Active, group_id: '4258'}
+    company: {id: '538', first_name: Company, last_name: Admin, email: convirza_user463660@yopmail.com,
+      phone_number: '3335836924', role: Admin, status: Active, group_id: '70457'}
+    location: {id: '539', first_name: Location, last_name: Admin, email: convirza_user43579@yopmail.com,
+      phone_number: '2043029825', role: Admin, status: Active, group_id: '70458'}
+  campaign:
+    agency:
+      campaign_id: null
+      campaign_name: Agency Campaign API
+      campaign_ext_id: ''
+      campaign_created: '2019-12-24T21:41:56.272Z'
+      campaign_status: active
+      group_id: 4258
+      campaign_modified: '2019-12-24T21:41:56.272Z'
+      campaign_start_date: '2019-12-24T21:41:56.272Z'
+      campaign_end_date: '2020-01-08T21:41:56.273Z'
+      campaign_owner_user_id: 4522
+      campaign_users: [4522]
+    company:
+      campaign_id: null
+      campaign_name: Company Campaign API
+      campaign_ext_id: ''
+      campaign_created: '2019-12-24T21:41:57.414Z'
+      campaign_status: active
+      group_id: 70457
+      campaign_modified: '2019-12-24T21:41:57.414Z'
+      campaign_start_date: '2019-12-24T21:41:57.414Z'
+      campaign_end_date: '2020-01-08T21:41:57.414Z'
+      campaign_owner_user_id: 538
+      campaign_users: [538]
+    location:
+      campaign_id: null
+      campaign_name: Location Campaign API
+      campaign_ext_id: ''
+      campaign_created: '2019-12-24T21:41:58.641Z'
+      campaign_status: active
+      group_id: 70458
+      campaign_modified: '2019-12-24T21:41:58.641Z'
+      campaign_start_date: '2019-12-24T21:41:58.641Z'
+      campaign_end_date: '2020-01-08T21:41:58.642Z'
+      campaign_owner_user_id: 539
+      campaign_users: [539]
+  callflow:
+    agency:
+      call_flow_id: null
+      call_flow_name: Agency Callflow API
+      call_flow_created: null
+      call_flow_status: active
+      repeat_interval: 72
+      call_value: 0
+      channel_id: 7
+      message_enabled: true
+      message: Agency Callflow Message
+      default_ringto: '8018786943'
+      group_id: 4258
+      email_to_notify: null
+      play_disclaimer: null
+      created_at: null
+      updated_at: '2019-12-24T21:42:02.030Z'
+      voicemail_enabled: false
+      routable_type: SimpleRoute
+      webhook_enabled: false
+      record_until: null
+      whisper_enabled: true
+      whisper_message: Agency Whisper Message
+      ring_delay: null
+      postcall_ivr_enabled: false
+      postcall_ivr_id: 0
+      spam_threshold: 0
+      spam_filter_enabled: false
+      referral_number: null
+      campaign_id: 805
+      number: {phone_number_id: 1327, phone_number: 2607777009}
+    company:
+      call_flow_id: null
+      call_flow_name: Company Callflow API
+      call_flow_created: null
+      call_flow_status: active
+      repeat_interval: 72
+      call_value: 0
+      channel_id: 7
+      message_enabled: true
+      message: Company Callflow Message
+      default_ringto: '8018786943'
+      group_id: 70457
+      email_to_notify: null
+      play_disclaimer: null
+      created_at: null
+      updated_at: '2019-12-24T21:42:06.835Z'
+      voicemail_enabled: false
+      routable_type: SimpleRoute
+      webhook_enabled: false
+      record_until: null
+      whisper_enabled: true
+      whisper_message: Company Whisper Message
+      ring_delay: null
+      postcall_ivr_enabled: false
+      postcall_ivr_id: 0
+      spam_threshold: 0
+      spam_filter_enabled: false
+      referral_number: null
+      campaign_id: 806
+      number: {phone_number_id: 1831, phone_number: 3853087944}
+    location:
+      call_flow_id: null
+      call_flow_name: Location Callflow API
+      call_flow_created: null
+      call_flow_status: active
+      repeat_interval: 72
+      call_value: 0
+      channel_id: 7
+      message_enabled: true
+      message: Location Callflow Message
+      default_ringto: '8018786943'
+      group_id: 70458
+      email_to_notify: null
+      play_disclaimer: null
+      created_at: null
+      updated_at: '2019-12-24T21:42:11.772Z'
+      voicemail_enabled: false
+      routable_type: SimpleRoute
+      webhook_enabled: false
+      record_until: null
+      whisper_enabled: true
+      whisper_message: Location Whisper Message
+      ring_delay: null
+      postcall_ivr_enabled: false
+      postcall_ivr_id: 0
+      spam_threshold: 0
+      spam_filter_enabled: false
+      referral_number: null
+      campaign_id: 807
+      number: {phone_number_id: 1846, phone_number: 3852371143}
+  webhook:
+    agency: {webhook_id: null, webhook_status: active, org_unit_id: 4258, webhook_Name: Agency
+        Webhook API, description: Webhook Created on Agency Group, webhook_Endpoint: 'https://encfelub0xc55.x.pipedream.net/',
+      method: POST, format: XML, include_DNI_Logs: true, include_Indicator_Scores: true}
+    company: {webhook_id: null, webhook_status: active, org_unit_id: 70457, webhook_Name: Company
+        Webhook API, description: Webhook Created on Company Group, webhook_Endpoint: 'https://enqoyq9u0u6p8.x.pipedream.net/',
+      method: POST, format: JSON, include_DNI_Logs: true, include_Indicator_Scores: true}
+    location: {webhook_id: null, webhook_status: active, org_unit_id: 70458, webhook_Name: Location
+        Webhook API, description: Webhook Created on Location Group, webhook_Endpoint: 'https://eni32vd61fhji.x.pipedream.net/',
+      method: POST, format: XML, include_DNI_Logs: true, include_Indicator_Scores: true}
+  custom_source:
+    agency: {org_unit_id: 4258, custom_source_id: null, custom_source_name: Agency
+        Custom Source}
+    company: {org_unit_id: 70457, custom_source_id: null, custom_source_name: Company
+        Custom Source}
+    location: {org_unit_id: 70458, custom_source_id: null, custom_source_name: Location
+        Custom Source}

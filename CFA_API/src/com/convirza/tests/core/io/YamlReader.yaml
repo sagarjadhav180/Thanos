@@ -1,0 +1,4 @@
+convirza:
+  group:
+    company: {id: 10, name: API Company Group}
+    location: {id: 0, name: API Location Group}

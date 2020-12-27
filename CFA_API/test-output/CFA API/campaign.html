@@ -1,0 +1,1107 @@
+<html>
+<head>
+<title>TestNG:  campaign</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>campaign</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/201</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Aug 28 20:55:47 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>14 seconds (14817 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_user_parameter_setup()'><b>campaign_user_parameter_setup</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_parameter_setup()'><b>campaign_list_parameter_setup</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_parameter_setup()'><b>campaign_user_parameter_setup</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_0_limit()'><b>campaign_callflow_with_0_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_0_offset()'><b>campaign_callflow_with_0_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_1000_limit()'><b>campaign_callflow_with_1000_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_agency_admin_access_token()'><b>campaign_callflow_with_agency_admin_access_token</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_blank_filter()'><b>campaign_callflow_with_blank_filter</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_blank_limit()'><b>campaign_callflow_with_blank_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_blank_limit_and_offset()'><b>campaign_callflow_with_blank_limit_and_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_blank_offset()'><b>campaign_callflow_with_blank_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_expired_access_token()'><b>campaign_callflow_with_expired_access_token</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_deleted_camp_status()'><b>campaign_callflow_with_filter_for_deleted_camp_status</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_invalid_route_type()'><b>campaign_callflow_with_filter_for_invalid_route_type</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_non_existing_call_value()'><b>campaign_callflow_with_filter_for_non_existing_call_value</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_non_existing_camp_name()'><b>campaign_callflow_with_filter_for_non_existing_camp_name</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_call_flow_created()'><b>campaign_callflow_with_filter_for_nonexisting_call_flow_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_call_flow_id()'><b>campaign_callflow_with_filter_for_nonexisting_call_flow_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_call_flow_modified()'><b>campaign_callflow_with_filter_for_nonexisting_call_flow_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_call_flow_name()'><b>campaign_callflow_with_filter_for_nonexisting_call_flow_name</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_created()'><b>campaign_callflow_with_filter_for_nonexisting_camp_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_end_date()'><b>campaign_callflow_with_filter_for_nonexisting_camp_end_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_ext_id()'><b>campaign_callflow_with_filter_for_nonexisting_camp_ext_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_id()'><b>campaign_callflow_with_filter_for_nonexisting_camp_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_modified()'><b>campaign_callflow_with_filter_for_nonexisting_camp_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_owner_id()'><b>campaign_callflow_with_filter_for_nonexisting_camp_owner_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_camp_start_date()'><b>campaign_callflow_with_filter_for_nonexisting_camp_start_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_group_id()'><b>campaign_callflow_with_filter_for_nonexisting_group_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_filter_for_nonexisting_route_type()'><b>campaign_callflow_with_filter_for_nonexisting_route_type</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_gt_1000_limit()'><b>campaign_callflow_with_gt_1000_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_access_token()'><b>campaign_callflow_with_invalid_access_token</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_flow_created()'><b>campaign_callflow_with_invalid_filter_operator_for_call_flow_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_flow_id()'><b>campaign_callflow_with_invalid_filter_operator_for_call_flow_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_flow_modified()'><b>campaign_callflow_with_invalid_filter_operator_for_call_flow_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_flow_name()'><b>campaign_callflow_with_invalid_filter_operator_for_call_flow_name</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_flow_status()'><b>campaign_callflow_with_invalid_filter_operator_for_call_flow_status</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_call_value()'><b>campaign_callflow_with_invalid_filter_operator_for_call_value</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_camp_end_date()'><b>campaign_callflow_with_invalid_filter_operator_for_camp_end_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_camp_owner_id()'><b>campaign_callflow_with_invalid_filter_operator_for_camp_owner_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_campaign_id()'><b>campaign_callflow_with_invalid_filter_operator_for_campaign_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_group_id()'><b>campaign_callflow_with_invalid_filter_operator_for_group_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_repeat_interval()'><b>campaign_callflow_with_invalid_filter_operator_for_repeat_interval</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operator_for_route_type()'><b>campaign_callflow_with_invalid_filter_operator_for_route_type</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_created()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_ext_id()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_ext_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_modified()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_name()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_name</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_start_date()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_start_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_filter_operetor_for_camp_status()'><b>campaign_callflow_with_invalid_filter_operetor_for_camp_status</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_limit()'><b>campaign_callflow_with_invalid_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_invalid_offset()'><b>campaign_callflow_with_invalid_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_negative_limit()'><b>campaign_callflow_with_negative_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_negative_offset()'><b>campaign_callflow_with_negative_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_access_token()'><b>campaign_callflow_with_valid_access_token</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_call_flow_created()'><b>campaign_callflow_with_valid_filter_for_call_flow_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_call_flow_modified()'><b>campaign_callflow_with_valid_filter_for_call_flow_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_call_flow_status()'><b>campaign_callflow_with_valid_filter_for_call_flow_status</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_call_value()'><b>campaign_callflow_with_valid_filter_for_call_value</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_callflow_id()'><b>campaign_callflow_with_valid_filter_for_callflow_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_created()'><b>campaign_callflow_with_valid_filter_for_camp_created</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_end_date()'><b>campaign_callflow_with_valid_filter_for_camp_end_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_ext_id()'><b>campaign_callflow_with_valid_filter_for_camp_ext_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_modified()'><b>campaign_callflow_with_valid_filter_for_camp_modified</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_name()'><b>campaign_callflow_with_valid_filter_for_camp_name</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_owner_id()'><b>campaign_callflow_with_valid_filter_for_camp_owner_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_start_date()'><b>campaign_callflow_with_valid_filter_for_camp_start_date</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_camp_status()'><b>campaign_callflow_with_valid_filter_for_camp_status</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_campaign_id()'><b>campaign_callflow_with_valid_filter_for_campaign_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_group_id()'><b>campaign_callflow_with_valid_filter_for_group_id</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_repeat_interval()'><b>campaign_callflow_with_valid_filter_for_repeat_interval</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_filter_for_route_type()'><b>campaign_callflow_with_valid_filter_for_route_type</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_limit()'><b>campaign_callflow_with_valid_limit</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignCallFlow.campaign_callflow_with_valid_limit_and_offset()'><b>campaign_callflow_with_valid_limit_and_offset</b><br>Test class: campaign.CampaignCallFlow</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignCallFlow@4e1d422d</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_1000_limit()'><b>campaign_list_with_1000_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_agency_admin_access_token()'><b>campaign_list_with_agency_admin_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_blank_access_token()'><b>campaign_list_with_blank_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_blank_filter()'><b>campaign_list_with_blank_filter</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_blank_limit()'><b>campaign_list_with_blank_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_blank_limit_and_offset()'><b>campaign_list_with_blank_limit_and_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_blank_offset()'><b>campaign_list_with_blank_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_expired_access_token()'><b>campaign_list_with_expired_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_agency_camp_id()'><b>campaign_list_with_filter_for_agency_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_company_camp_id()'><b>campaign_list_with_filter_for_company_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_deleted_camp_status()'><b>campaign_list_with_filter_for_deleted_camp_status</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_location_camp_id()'><b>campaign_list_with_filter_for_location_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_non_existing_camp_name()'><b>campaign_list_with_filter_for_non_existing_camp_name</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_created()'><b>campaign_list_with_filter_for_nonexisting_camp_created</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_end_date()'><b>campaign_list_with_filter_for_nonexisting_camp_end_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_ext_id()'><b>campaign_list_with_filter_for_nonexisting_camp_ext_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_id()'><b>campaign_list_with_filter_for_nonexisting_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_modified()'><b>campaign_list_with_filter_for_nonexisting_camp_modified</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_owner_id()'><b>campaign_list_with_filter_for_nonexisting_camp_owner_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_camp_start_date()'><b>campaign_list_with_filter_for_nonexisting_camp_start_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_group_id()'><b>campaign_list_with_filter_for_nonexisting_group_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_owner_fname()'><b>campaign_list_with_filter_for_nonexisting_owner_fname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_filter_for_nonexisting_owner_lname()'><b>campaign_list_with_filter_for_nonexisting_owner_lname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_gt_2000_limit()'><b>campaign_list_with_gt_2000_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_gtq_filter_for_camp_id()'><b>campaign_list_with_gtq_filter_for_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_access_token()'><b>campaign_list_with_invalid_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operator_for_camp_end_date()'><b>campaign_list_with_invalid_filter_operator_for_camp_end_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operator_for_camp_owner_id()'><b>campaign_list_with_invalid_filter_operator_for_camp_owner_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operator_for_group_id()'><b>campaign_list_with_invalid_filter_operator_for_group_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operator_for_owner_fname()'><b>campaign_list_with_invalid_filter_operator_for_owner_fname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operator_for_owner_lname()'><b>campaign_list_with_invalid_filter_operator_for_owner_lname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_created()'><b>campaign_list_with_invalid_filter_operetor_for_camp_created</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_ext_id()'><b>campaign_list_with_invalid_filter_operetor_for_camp_ext_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_id()'><b>campaign_list_with_invalid_filter_operetor_for_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_modified()'><b>campaign_list_with_invalid_filter_operetor_for_camp_modified</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_name()'><b>campaign_list_with_invalid_filter_operetor_for_camp_name</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_start_date()'><b>campaign_list_with_invalid_filter_operetor_for_camp_start_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_filter_operetor_for_camp_status()'><b>campaign_list_with_invalid_filter_operetor_for_camp_status</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_limit()'><b>campaign_list_with_invalid_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_invalid_offset()'><b>campaign_list_with_invalid_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_ltq_filter_for_camp_id()'><b>campaign_list_with_ltq_filter_for_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_negative_limit()'><b>campaign_list_with_negative_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_negative_offset()'><b>campaign_list_with_negative_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_access_token()'><b>campaign_list_with_valid_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_created()'><b>campaign_list_with_valid_filter_for_camp_created</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_end_date()'><b>campaign_list_with_valid_filter_for_camp_end_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_ext_id()'><b>campaign_list_with_valid_filter_for_camp_ext_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_id()'><b>campaign_list_with_valid_filter_for_camp_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_modified()'><b>campaign_list_with_valid_filter_for_camp_modified</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_owner_id()'><b>campaign_list_with_valid_filter_for_camp_owner_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_start_date()'><b>campaign_list_with_valid_filter_for_camp_start_date</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_camp_status()'><b>campaign_list_with_valid_filter_for_camp_status</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_group_id()'><b>campaign_list_with_valid_filter_for_group_id</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_owner_fname()'><b>campaign_list_with_valid_filter_for_owner_fname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_filter_for_owner_lname()'><b>campaign_list_with_valid_filter_for_owner_lname</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_limit()'><b>campaign_list_with_valid_limit</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_limit_and_offset()'><b>campaign_list_with_valid_limit_and_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_with_valid_offset()'><b>campaign_list_with_valid_offset</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignList.campaign_list_without_access_token()'><b>campaign_list_without_access_token</b><br>Test class: campaign.CampaignList</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignList@21213b92</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_0_limit()'><b>campaign_user_with_0_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_0_offset()'><b>campaign_user_with_0_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_2000_limit()'><b>campaign_user_with_2000_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_agency_admin_access_token()'><b>campaign_user_with_agency_admin_access_token</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_blank_filter()'><b>campaign_user_with_blank_filter</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_blank_limit()'><b>campaign_user_with_blank_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_blank_limit_and_offset()'><b>campaign_user_with_blank_limit_and_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_blank_offset()'><b>campaign_user_with_blank_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_expired_access_token()'><b>campaign_user_with_expired_access_token</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_deleted_camp_status()'><b>campaign_user_with_filter_for_deleted_camp_status</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_invalid_user_email()'><b>campaign_user_with_filter_for_invalid_user_email</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_non_existing_camp_name()'><b>campaign_user_with_filter_for_non_existing_camp_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_created()'><b>campaign_user_with_filter_for_nonexisting_camp_created</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_end_date()'><b>campaign_user_with_filter_for_nonexisting_camp_end_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_ext_id()'><b>campaign_user_with_filter_for_nonexisting_camp_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_id()'><b>campaign_user_with_filter_for_nonexisting_camp_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_modified()'><b>campaign_user_with_filter_for_nonexisting_camp_modified</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_owner_id()'><b>campaign_user_with_filter_for_nonexisting_camp_owner_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_camp_start_date()'><b>campaign_user_with_filter_for_nonexisting_camp_start_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_ct_user_id()'><b>campaign_user_with_filter_for_nonexisting_ct_user_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_first_name()'><b>campaign_user_with_filter_for_nonexisting_first_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_group_id()'><b>campaign_user_with_filter_for_nonexisting_group_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_last_name()'><b>campaign_user_with_filter_for_nonexisting_last_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_role_id()'><b>campaign_user_with_filter_for_nonexisting_role_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_user_email()'><b>campaign_user_with_filter_for_nonexisting_user_email</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_user_ext_id()'><b>campaign_user_with_filter_for_nonexisting_user_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_filter_for_nonexisting_user_title()'><b>campaign_user_with_filter_for_nonexisting_user_title</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_gt_2000_limit()'><b>campaign_user_with_gt_2000_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_access_token()'><b>campaign_user_with_invalid_access_token</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_camp_end_date()'><b>campaign_user_with_invalid_filter_operator_for_camp_end_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_camp_ext_id()'><b>campaign_user_with_invalid_filter_operator_for_camp_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_camp_owner_id()'><b>campaign_user_with_invalid_filter_operator_for_camp_owner_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_campaign_id()'><b>campaign_user_with_invalid_filter_operator_for_campaign_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_ct_user_id()'><b>campaign_user_with_invalid_filter_operator_for_ct_user_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_first_name()'><b>campaign_user_with_invalid_filter_operator_for_first_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_group_id()'><b>campaign_user_with_invalid_filter_operator_for_group_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_last_name()'><b>campaign_user_with_invalid_filter_operator_for_last_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_role_id()'><b>campaign_user_with_invalid_filter_operator_for_role_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_user_email()'><b>campaign_user_with_invalid_filter_operator_for_user_email</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_user_ext_id()'><b>campaign_user_with_invalid_filter_operator_for_user_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_user_status()'><b>campaign_user_with_invalid_filter_operator_for_user_status</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operator_for_user_title()'><b>campaign_user_with_invalid_filter_operator_for_user_title</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operetor_for_camp_created()'><b>campaign_user_with_invalid_filter_operetor_for_camp_created</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operetor_for_camp_modified()'><b>campaign_user_with_invalid_filter_operetor_for_camp_modified</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operetor_for_camp_name()'><b>campaign_user_with_invalid_filter_operetor_for_camp_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operetor_for_camp_start_date()'><b>campaign_user_with_invalid_filter_operetor_for_camp_start_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_filter_operetor_for_camp_status()'><b>campaign_user_with_invalid_filter_operetor_for_camp_status</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_limit()'><b>campaign_user_with_invalid_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_invalid_offset()'><b>campaign_user_with_invalid_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_negative_limit()'><b>campaign_user_with_negative_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_negative_offset()'><b>campaign_user_with_negative_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_access_token()'><b>campaign_user_with_valid_access_token</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_created()'><b>campaign_user_with_valid_filter_for_camp_created</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_end_date()'><b>campaign_user_with_valid_filter_for_camp_end_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_ext_id()'><b>campaign_user_with_valid_filter_for_camp_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_modified()'><b>campaign_user_with_valid_filter_for_camp_modified</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_name()'><b>campaign_user_with_valid_filter_for_camp_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_owner_id()'><b>campaign_user_with_valid_filter_for_camp_owner_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_start_date()'><b>campaign_user_with_valid_filter_for_camp_start_date</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_camp_status()'><b>campaign_user_with_valid_filter_for_camp_status</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_campaign_id()'><b>campaign_user_with_valid_filter_for_campaign_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_ct_user_id()'><b>campaign_user_with_valid_filter_for_ct_user_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_first_name()'><b>campaign_user_with_valid_filter_for_first_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_group_id()'><b>campaign_user_with_valid_filter_for_group_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_last_name()'><b>campaign_user_with_valid_filter_for_last_name</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_role_id()'><b>campaign_user_with_valid_filter_for_role_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_user_email()'><b>campaign_user_with_valid_filter_for_user_email</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_user_ext_id()'><b>campaign_user_with_valid_filter_for_user_ext_id</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_filter_for_user_status()'><b>campaign_user_with_valid_filter_for_user_status</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_limit()'><b>campaign_user_with_valid_limit</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.CampaignUser.campaign_user_with_valid_limit_and_offset()'><b>campaign_user_with_valid_limit_and_offset</b><br>Test class: campaign.CampaignUser</td>
+<td></td>
+<td>0</td>
+<td>campaign.CampaignUser@3327bd23</td></tr>
+<tr>
+<td title='campaign.Campaign.campaign_with_blank_id()'><b>campaign_with_blank_id</b><br>Test class: campaign.Campaign</td>
+<td></td>
+<td>0</td>
+<td>campaign.Campaign@a67c67e</td></tr>
+</table><p>
+</body>
+</html>

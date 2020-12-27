@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    
+    environment {
+        GIT_CREDENTIAL = credentials('GIT_CREDENTIAL')
+    }
+    
+    tools {
+    	maven 'Maven-3.6.0'
+    	git 'Default'
+    }
+    stages {
+		stage('Checkout Project') {
+		  steps {
+			  git branch: '${BRANCH}', 
+			  credentialsId: 'GIT_CREDENTIAL',
+			  url: 'https://github.com/ContactPoint/API_Automation.git'
+		  }  
+		}
+	    
+        stage('Test Execution') {
+            steps {
+				sh "mvn clean install test -DsuiteXmlFile=${XML} --file CFA_API/pom.xml -Denv=${ENV} -Dapiurl=${API_URL} -Dappurl=${APP_URL} -Ddburl=${DB_URL} -Dusername=${APP_USERNAME} -Dpassword=${APP_PASSWORD}"
+            }
+        }
+    }
+
+
+}

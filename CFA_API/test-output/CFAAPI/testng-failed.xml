@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [CFAAPI]">
+  <test name="callflow(failed)">
+    <classes>
+      <class name="callflow.UpdateTrackingNumber">
+        <methods>
+          <include name="generateOuthTokenForCompanyAndLocationUser"/>
+          <include name="updateTrackingNumberForIvrRoute"/>
+          <include name="tearDown"/>
+          <include name="send_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- callflow.UpdateTrackingNumber -->
+    </classes>
+  </test> <!-- callflow(failed) -->
+</suite> <!-- Failed suite [CFAAPI] -->

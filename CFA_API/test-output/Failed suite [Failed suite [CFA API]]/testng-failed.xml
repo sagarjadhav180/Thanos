@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [Failed suite [CFA API]]]">
+  <test name="group(failed)(failed)(failed)">
+    <classes>
+      <class name="group.GroupUser">
+        <methods>
+          <include name="group_user_with_valid_operator_for_user_ext_id_in_filter"/>
+          <include name="tearDown"/>
+          <include name="send_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- group.GroupUser -->
+    </classes>
+  </test> <!-- group(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [CFA API]]] -->

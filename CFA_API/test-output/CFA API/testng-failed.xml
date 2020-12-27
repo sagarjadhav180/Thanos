@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CFA API]">
+  <test name="blacklist(failed)">
+    <classes>
+      <class name="blacklist.GetBlacklistNumbers">
+        <methods>
+          <include name="blacklistedNumbersListWithInvalidURL"/>
+          <include name="tearDown"/>
+          <include name="send_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- blacklist.GetBlacklistNumbers -->
+    </classes>
+  </test> <!-- blacklist(failed) -->
+</suite> <!-- Failed suite [CFA API] -->

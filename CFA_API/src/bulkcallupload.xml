@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CFA API">
+
+
+  <test thread-count="1" name="Test">
+    <classes>
+
+      <class name="call.BulkCallUpload">
+      
+      
+     </class>
+
+    </classes>
+  </test> <!-- Test -->
+
+</suite>

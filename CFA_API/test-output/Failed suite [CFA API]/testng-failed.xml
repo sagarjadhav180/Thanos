@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [CFA API]]">
+  <test name="group(failed)(failed)">
+    <classes>
+      <class name="misc.EmailCalldata">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- misc.EmailCalldata -->
+      <class name="group.GroupUser">
+        <methods>
+          <include name="group_user_with_valid_operator_for_user_ext_id_in_filter"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- group.GroupUser -->
+      <class name="group.GroupList">
+        <methods>
+          <include name="group_list_with_invalid_operator_for_city_in_filter"/>
+          <include name="group_list_with_invalid_operator_for_address_in_filter"/>
+          <include name="group_list_with_invalid_operator_for_group_ext_id_in_filter"/>
+          <include name="tearDown"/>
+          <include name="group_list_parameter_setup"/>
+        </methods>
+      </class> <!-- group.GroupList -->
+      <class name="webhook.GetWebhook">
+        <methods>
+          <include name="tearDown"/>
+          <include name="send_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- webhook.GetWebhook -->
+    </classes>
+  </test> <!-- group(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [CFA API]] -->

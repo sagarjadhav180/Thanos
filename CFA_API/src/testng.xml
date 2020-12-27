@@ -1,0 +1,89 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CFA API">
+	<test name="oauth_token" preserve-order="true">
+		<classes>
+			<class name="oauth_token.Access_token" />
+		</classes>
+	</test>
+
+	<test name="campaign" preserve-order="true" parallel="false">
+		<classes>
+			<class name="campaign.Campaign" />
+			<class name="campaign.CampaignCallFlow" />
+			<class name="campaign.CampaignList" />
+			<class name="campaign.CampaignUser" />
+		</classes>
+	</test>
+
+	<test name="group" preserve-order="true" parallel="false">
+		<classes>
+			<class name="group.GetGroup" />
+			<class name="group.GroupList" />
+			<class name="group.GroupDniSnippet" />
+			<class name="group.GroupUser" />
+		</classes>
+	</test>
+
+	<test name="customsource" preserve-order="true" parallel="false">
+		<classes>
+			<class name="customsource.GetCustomSource" />
+			<class name="customsource.DeleteCallflowCustomSource" />
+			<class name="customsource.DeleteCustomSource" />
+			<class name="customsource.PostCallflowCustomSource" />
+			<class name="customsource.PostCustomSource" />
+		</classes>
+	</test>
+
+	<test name="misc" preserve-order="true" parallel="false">
+		<classes>
+			<class name="misc.EmailCalldata" />
+			<class name="misc.PostUploadWhisperMessage" />
+			<class name="misc.PostUploadVoicePrompt" />
+			<class name="misc.GetAudioList" />
+		</classes>
+	</test>
+
+	<test name="callflow" preserve-order="true" parallel="false">
+		<classes>
+			<class name="callflow.DNIClass" />
+			<class name="callflow.CallFlowList" />
+			<class name="callflow.CallFlow" />
+			<class name="callflow.CallflowCallflow" />
+			<class name="callflow.CallflowNumber" />
+			<class name="callflow.CallflowRecording" />
+			<class name="callflow.PostTrackingNumber" />
+		</classes>
+	</test>
+
+	<test name="webhook" preserve-order="true" parallel="false">
+		<classes>
+			<class name="webhook.GetWebhook" />
+		</classes>
+	</test>
+
+	<test name="call" preserve-order="true" parallel="false">
+		<classes>
+			<class name="call.PostCallTag" />
+			<class name="call.PostCallUpload" />
+			<class name="call.GetCallTag" />
+			<class name="call.PostCallComment" />
+		</classes>
+	</test>
+
+	<test name="blacklist" preserve-order="true" parallel="false">
+		<classes>
+			<class name="blacklist.GetBlacklistNumbers" />
+			<class name="blacklist.PostBlacklistedNumbers" />
+			<class name="blacklist.DeleteBlacklistedNumbers" />
+		</classes>
+	</test>
+
+	<test name="tag" preserve-order="true" parallel="false">
+		<classes>
+			<class name="tags.DeleteTag" />
+			<class name="tags.GetTag" />
+		</classes>
+	</test>
+
+
+</suite>
