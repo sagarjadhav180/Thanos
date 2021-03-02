@@ -142,6 +142,7 @@ public class TNUtil extends BaseClass {
 	public static JSONObject simpleData(Map<String, Object> confCampaignHierarchy, Map<String, Object> confGroupHierarchy, Map<String, Object> confCallflowHierarchy, PhoneNumber phoneNumber, String numbers, String action) {
 		
 		PostCallflowRequest postCallflowRequest = mapper.convertValue(confCallflowHierarchy, PostCallflowRequest.class);
+		postCallflowRequest.setCall_flow_name("CFA TEST TN -"+RandomContentGenerator.getRandomString(3));
 		postCallflowRequest.setGroup_id(
 		    Integer.parseInt(confGroupHierarchy.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString()));
 		postCallflowRequest.setUpdated_at(DateUtils.getTodayDate());
