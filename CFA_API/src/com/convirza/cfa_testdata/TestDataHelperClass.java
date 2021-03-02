@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.convirza.constants.Constants;
 import com.convirza.constants.TestDataYamlConstants;
+import com.convirza.core.utils.RandomContentGenerator;
 import com.convirza.tests.core.io.TestDataYamlReader;
 import common.BaseClass;
 import common.HelperClass;
@@ -45,45 +46,68 @@ public class TestDataHelperClass extends BaseClass {
 		
 		access_token_agency_admin = access_token;
 		
-		setInvoactionCounts();
+//		setInvoactionCounts();
 	}
 	
-	@Test(invocationCount=100)
+	@Test(invocationCount=2)
 	public void groups() throws Exception {
-		CFAModules cFAModules = new CFAModules();
-	
-		cFAModules.uploadGroups(access_token_company_admin); //--company
-		cFAModules.uploadGroups(access_token_location_admin); //--location
+		CFAModules cfaModules = new CFAModules();
+
+		Map<String, Object> compConfGroupHierarchyAgency = yamlReader.readGroupInfo(Constants.GroupHierarchy.AGENCY);
+		String agencyGroupId=compConfGroupHierarchyAgency.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		
+		Map<String, Object> compConfGroupHierarchyCompany = yamlReader.readGroupInfo(Constants.GroupHierarchy.COMPANY);
+		String companyGroupId=compConfGroupHierarchyCompany.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		
+		cfaModules.uploadGroups("CFA TEST GROUP COMPANY-"+RandomContentGenerator.getRandomString(3), access_token_agency_admin, agencyGroupId, agencyGroupId); //--company
+		cfaModules.uploadGroups("CFA TEST GROUP LOCATION-"+RandomContentGenerator.getRandomString(3), access_token_company_admin, companyGroupId, agencyGroupId); //--location
 	}
 	
 	
-	@Test(invocationCount=100)
+	@Test(invocationCount=2)
 	public void campaigns() throws Exception {
-		CFAModules cFAModules = new CFAModules();
+		CFAModules cfaModules = new CFAModules();
+		Map<String, Object> compConfGroupHierarchyAgency = yamlReader.readGroupInfo(Constants.GroupHierarchy.AGENCY);
+		String agencyGroupId=compConfGroupHierarchyAgency.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		
+		Map<String, Object> compConfUserHierarchyAgency = yamlReader.readUserInfo(Constants.GroupHierarchy.AGENCY);
+		String agencyUserId=compConfUserHierarchyAgency.get(TestDataYamlConstants.UserConstants.ID).toString();
+		
+		Map<String, Object> compConfGroupHierarchyCompany = yamlReader.readGroupInfo(Constants.GroupHierarchy.COMPANY);
+		String companyGroupId=compConfGroupHierarchyCompany.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 
-		cFAModules.uploadCampaigns(access_token_agency_admin); //--agency
-		cFAModules.uploadCampaigns(access_token_company_admin); //--company
-		cFAModules.uploadCampaigns(access_token_location_admin); //--location
+		Map<String, Object> compConfUserHierarchyCompany = yamlReader.readUserInfo(Constants.GroupHierarchy.COMPANY);
+		String companyUserId=compConfUserHierarchyCompany.get(TestDataYamlConstants.UserConstants.ID).toString();
+
+		Map<String, Object> compConfUserHierarchyLocation = yamlReader.readUserInfo(Constants.GroupHierarchy.LOCATION);
+		String locationUserId=compConfUserHierarchyLocation.get(TestDataYamlConstants.UserConstants.ID).toString();
+		
+		Map<String, Object> compConfGroupHierarchyLocation = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
+		String locationGroupId=compConfGroupHierarchyLocation.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		
+		cfaModules.uploadCampaigns("CFA TEST CAMPAIGN AGENCY-"+RandomContentGenerator.getRandomString(3), access_token_agency_admin, agencyGroupId, agencyUserId); //--agency
+		cfaModules.uploadCampaigns("CFA TEST CAMPAIGN COMPANY-"+RandomContentGenerator.getRandomString(3), access_token_company_admin, companyGroupId, companyUserId); //--company
+		cfaModules.uploadCampaigns("CFA TEST CAMPAIGN LOCATION-"+RandomContentGenerator.getRandomString(3), access_token_location_admin, locationGroupId, locationUserId); //--location
 	}
 
 	
-	@Test(invocationCount=100)
+	@Test(invocationCount=2)
 	public void trackingNumbers() throws Exception {
-		CFAModules cFAModules = new CFAModules();
+		CFAModules cfaModules = new CFAModules();
 
-		cFAModules.uploadTrackingNumbers(access_token_agency_admin); //--agency
-		cFAModules.uploadTrackingNumbers(access_token_company_admin); //--company
-		cFAModules.uploadTrackingNumbers(access_token_location_admin); //--location
+		cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.AGENCY, access_token_agency_admin); //--agency
+		cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.COMPANY, access_token_company_admin); //--company
+		cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.LOCATION, access_token_location_admin); //--location
 	}
 	
 	
-	@Test(invocationCount=100)
+	@Test(invocationCount=2)
 	public void calls() throws Exception {
-		CFAModules cFAModules = new CFAModules();
+		CFAModules cfaModules = new CFAModules();
 
-		cFAModules.uploadCalls(access_token_agency_admin); //--agency
-		cFAModules.uploadCalls(access_token_company_admin); //--company
-		cFAModules.uploadCalls(access_token_location_admin); //--location
+		cfaModules.uploadCalls(access_token_agency_admin); //--agency
+		cfaModules.uploadCalls(access_token_company_admin); //--company
+		cfaModules.uploadCalls(access_token_location_admin); //--location
 	}
 	
 	public void setInvoactionCounts() {

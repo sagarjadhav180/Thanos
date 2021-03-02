@@ -135,7 +135,7 @@ public class TestDataPreparation extends BaseClass {
 	  createGroup(Constants.GroupHierarchy.COMPANY);
 	  createGroup(Constants.GroupHierarchy.LOCATION);
 	  
-	  WebDriver driver = BrowserInitializer.initialize("phantom");
+	  WebDriver driver = BrowserInitializer.initialize("chrome");
 	  Login.login(driver);
 	  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);

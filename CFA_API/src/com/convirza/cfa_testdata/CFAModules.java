@@ -17,6 +17,7 @@ import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 
 import com.convirza.constants.Constants;
+import com.convirza.core.utils.RandomContentGenerator;
 import com.convirza.utils.TNUtil;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -24,24 +25,23 @@ import common.BaseClass;
 import common.HelperClass;
 
 public class CFAModules extends BaseClass implements Modules{
-
-	String class_name = "PostGroup";
+		
 	ArrayList<String> test_data;
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void uploadGroups(String accessToken) throws Exception {
+	public void uploadGroups(String group_name, String accessToken, String group_parent_id, String billing_id) throws Exception {
+		String class_name = "PostGroup";
 		// TODO Auto-generated method stub
 		test = extent.startTest("post_group_with_valid_access_token", "To validate whether user is create group through post group api with valid access_token");
 		test.assignCategory("CFA POST /group API");
 		test_data = HelperClass.readTestData(class_name, "post_group_with_valid_access_token");
 		JSONArray dni_array = new JSONArray();
 		JSONObject json_obj = new JSONObject();
-		json_obj.put("group_name", test_data.get(1));
-		json_obj.put("group_parent_id", Integer.parseInt(test_data.get(3)));  //-------------input
-		json_obj.put("top_group_id", Integer.parseInt(test_data.get(4))); //--------------input
+		json_obj.put("group_name", group_name);
+		json_obj.put("group_parent_id", Integer.parseInt(group_parent_id));  //-------------input
 		json_obj.put("group_status", test_data.get(5));
-		json_obj.put("billing_id", Integer.parseInt(test_data.get(6)));  //-------------input
+		json_obj.put("billing_id", Integer.parseInt(billing_id));  //-------------input
 		json_obj.put("address", test_data.get(7));
 		json_obj.put("city", test_data.get(8));
 		json_obj.put("state", test_data.get(9));
@@ -56,31 +56,33 @@ public class CFAModules extends BaseClass implements Modules{
 		String line = "";
 		while ((line = rd.readLine()) != null) {
 			JSONParser parser = new JSONParser();
-			JSONArray api_response =(JSONArray) parser.parse(line);	
-			JSONObject json_response = (JSONObject)api_response.get(0);
-			String result_data = json_response.get("result").toString();
+			JSONObject api_response =(JSONObject) parser.parse(line);	
+			String result_data = api_response.get("result").toString();
 			Assert.assertEquals(result_data, "success", "API is returning error when valid access_token is passed.");
 			test.log(LogStatus.PASS, "Check API is returning success when valid access_token is passed.");
-			String data_value = json_response.get("data").toString();
+			String data_value = api_response.get("data").toString();
+			JSONArray json_data_array = (JSONArray)api_response.get("data");
+			JSONObject json_data_object = (JSONObject) json_data_array.get(0);
 			HelperClass.multiple_assertnotEquals(data_value, "data");
 			test.log(LogStatus.PASS, "Check group_id is returned in response.");
-			Assert.assertEquals(json_response.get("entry_count").toString(), "1", "Invalid entry_count is displayed in response.");
+			Assert.assertTrue(!json_data_object.get("data").toString().isEmpty(), "group_id is not returned in response.");
 			test.log(LogStatus.PASS, "Check proper entry_count is displayed in response.");
+			Assert.assertEquals(json_data_object.get("entry_count").toString(), "1", "Invalid entry_count is displayed in response.");
 		}
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void uploadCampaigns(String accessToken) throws Exception {
+	public void uploadCampaigns(String campaign_name, String accessToken, String group_id, String campaign_owner_user_id) throws Exception {
 		// TODO Auto-generated method stub
+		String class_name = "CampaignPost";
 		test = extent.startTest("create_campaign_with_valid_campaign_name", "To validate whether user is able create campaign through campaign post api with valid campaign_name.");
 		test.assignCategory("CFA POST /campaign API");
 		test_data = HelperClass.readTestData(class_name, "create_campaign_with_valid_campaign_name");
 		Date now = new Date();
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("YYYY'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'");
 		String today_formated_date = dateFormatter.format(now).toString();
-		String[] campaign_names = test_data.get(1).split(",");
-		for(String campaign_name: campaign_names){
+		
 			JSONArray array = new JSONArray();
 			JSONObject json = new JSONObject();
 			json.put("campaign_name", campaign_name);
@@ -89,8 +91,8 @@ public class CFAModules extends BaseClass implements Modules{
 			json.put("campaign_created", today_formated_date);
 			json.put("campaign_modified", today_formated_date);
 			json.put("campaign_start_date", today_formated_date);
-			json.put("campaign_owner_user_id", Integer.parseInt(test_data.get(7)));  //-------------input
-			json.put("group_id", Integer.parseInt(test_data.get(6))); //-------------input
+			json.put("campaign_owner_user_id", Integer.parseInt(campaign_owner_user_id));  //-------------input
+			json.put("group_id", Integer.parseInt(group_id)); //-------------input
 			JSONArray campaign_users = new JSONArray();
 			json.put("campaign_users", campaign_users);
 			array.add(json);
@@ -101,8 +103,8 @@ public class CFAModules extends BaseClass implements Modules{
 			String line = "";
 			while ((line = rd.readLine()) != null) {				
 				JSONParser parser = new JSONParser();
-				JSONArray json_array_response = (JSONArray) parser.parse(line);
-				JSONObject json_response = (JSONObject)json_array_response.get(0);
+				JSONArray json_response_array = (JSONArray) parser.parse(line);
+				JSONObject json_response = (JSONObject) json_response_array.get(0);
 				String result_data = json_response.get("result").toString();
 				Assert.assertEquals(result_data, "success", "API is returning error when valid("+campaign_name+") campaign_name is passed while creating campaign.");
 				test.log(LogStatus.PASS, "API is returning success when valid("+campaign_name+") campaign_name is passed while creating campaign.");
@@ -113,17 +115,17 @@ public class CFAModules extends BaseClass implements Modules{
 				Assert.assertEquals(entry_count, "1", "Incorrect entry_count value is displayed in response.");
 				test.log(LogStatus.PASS, "entry_count value is correct when valid("+campaign_name+") value is passed for campaign_name");
 			}   
-		}
+		
 		
 	}
 
 	@Override
-	public void uploadTrackingNumbers(String accessToken) throws Exception {
+	public void uploadTrackingNumbers(String level, String accessToken) throws Exception {
 		// TODO Auto-generated method stub
 		test = extent.startTest("PostCallFlowForSimpleRouteByAgencyAdmin", "To validate whether agency level admin user is able to create callflow of route type Simple");
 		test.assignCategory("CFA POST /callflow API");
 		
-		JSONArray callflowReq = TNUtil.createCallflow(Constants.GroupHierarchy.AGENCY,"simple",1, "unique", "post"); //-------------input
+		JSONArray callflowReq = TNUtil.createCallflow(level,"simple",1, "unique", "post"); //-------------input
 		CloseableHttpResponse response;
 
 		response = HelperClass.make_post_request("/v2/callflow", access_token, callflowReq);
@@ -145,6 +147,7 @@ public class CFAModules extends BaseClass implements Modules{
 	public void uploadCalls(String accessToken) throws Exception {
 		// TODO Auto-generated method stub
 		CallUploadUtil callUploadUtil =  new CallUploadUtil();
+		callUploadUtil.setUpForCallUpload();
 		callUploadUtil.uploadCallWithValidCallDate(accessToken);
 	}
 

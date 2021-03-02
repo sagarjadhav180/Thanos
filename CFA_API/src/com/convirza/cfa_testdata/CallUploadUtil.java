@@ -38,7 +38,6 @@ public class CallUploadUtil extends BaseClass{
 	String[] fields= {"tracking_number","caller_id","ring_to" ,"disposition","call_date","file","group_id","group_ext_id","channel_id","campaign_id","line_type","assign_to","custom_source_type_1","custom_source_type_2","custom_source_type_3","custom_source_type_4","custom_source_type_5","company_name","city","zip_code","caller_name","address","state","swap_channels","is_outbound","tag_name"};	
 
 	@SuppressWarnings("unchecked")
-	@BeforeClass
 	public void setUpForCallUpload() throws IOException, ParseException {
 		testdata = HelperClass.readTestData(class_name, "uploadCallWithValidCallDate");
 		caller_id = testdata.get(1);

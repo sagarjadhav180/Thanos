@@ -35,4 +35,8 @@ public class RandomContentGenerator {
 	public static String getRandomString() {
 		return RandomStringUtils.randomAlphanumeric(20).toLowerCase();
 	}
+	
+	public static String getRandomString(int digits) {
+		return RandomStringUtils.randomAlphanumeric(digits).toLowerCase();
+	}
 }
