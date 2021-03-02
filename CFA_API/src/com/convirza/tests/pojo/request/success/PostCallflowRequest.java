@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.convirza.constants.TestDataYamlConstants;
+import com.convirza.core.utils.RandomContentGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
