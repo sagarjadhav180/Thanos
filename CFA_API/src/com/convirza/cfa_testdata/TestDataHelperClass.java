@@ -126,6 +126,13 @@ public class TestDataHelperClass extends BaseClass {
 		cfaModules.uploadWebHooks(access_token_location_admin, locationGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--location
 	}
 
+	@Test
+	public void components() {
+		CFAComponent cfaComponent = new CFAComponent();
+		cfaComponent.setUp();
+		cfaComponent.componentAction();
+	}
+	
 	public void setInvoactionCounts() {
 		invocationCountForGroups = TestDataUtil.getInvocationCount("groups");
 		invocationCountForGroups = TestDataUtil.getInvocationCount("campaigns");
