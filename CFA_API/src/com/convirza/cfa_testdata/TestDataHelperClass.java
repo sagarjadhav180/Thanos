@@ -110,6 +110,22 @@ public class TestDataHelperClass extends BaseClass {
 		cfaModules.uploadCalls(access_token_location_admin); //--location
 	}
 	
+	@Test(invocationCount=2)
+	public void webhooks() throws Exception {
+		CFAModules cfaModules = new CFAModules();
+
+		Map<String, Object> compConfGroupHierarchyAgency = yamlReader.readGroupInfo(Constants.GroupHierarchy.AGENCY);
+		String agencyGroupId=compConfGroupHierarchyAgency.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		Map<String, Object> compConfGroupHierarchyCompany = yamlReader.readGroupInfo(Constants.GroupHierarchy.COMPANY);
+		String companyGroupId=compConfGroupHierarchyCompany.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		Map<String, Object> compConfGroupHierarchyLocation = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
+		String locationGroupId=compConfGroupHierarchyLocation.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
+		
+		cfaModules.uploadWebHooks(access_token_agency_admin, agencyGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--agency
+		cfaModules.uploadWebHooks(access_token_company_admin, companyGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--company
+		cfaModules.uploadWebHooks(access_token_location_admin, locationGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--location
+	}
+
 	public void setInvoactionCounts() {
 		invocationCountForGroups = TestDataUtil.getInvocationCount("groups");
 		invocationCountForGroups = TestDataUtil.getInvocationCount("campaigns");

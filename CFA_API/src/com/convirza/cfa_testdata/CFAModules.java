@@ -151,15 +151,43 @@ public class CFAModules extends BaseClass implements Modules{
 		callUploadUtil.uploadCallWithValidCallDate(accessToken);
 	}
 
-	@Override
-	public void tags(String accessToken) {
-		// TODO Auto-generated method stub
-		
-	}
 
+	@SuppressWarnings({ "unchecked" })
 	@Override
-	public void uploadWebHooks(String accessToken) {
+	public void uploadWebHooks(String accessToken, String org_unit_id, String webhook_Name) throws IOException, URISyntaxException, ParseException {
 		// TODO Auto-generated method stub
+		String class_name = "PostWebhook";
+		// TODO Auto-generated method stub
+		test = extent.startTest("uploadWebHooks", "To validate whether user is able to create webhook valid access_token");
+		test.assignCategory("CFA POST /webhook API");
+		test_data = HelperClass.readTestData(class_name, "uploadWebHooks");
+		
+		JSONObject json_obj = new JSONObject();
+		json_obj.put("org_unit_id", Integer.parseInt(org_unit_id));
+		json_obj.put("webhook_status", test_data.get(1));  //-------------input
+		json_obj.put("webhook_Name", webhook_Name);
+		json_obj.put("description", test_data.get(2));  //-------------input
+		json_obj.put("webhook_Endpoint", test_data.get(3));
+		json_obj.put("method", test_data.get(4));
+		json_obj.put("format", test_data.get(5));
+		
+		CloseableHttpResponse response = HelperClass.make_post_request("/v2/webhook", accessToken, json_obj);
+		Assert.assertTrue(!(response.getStatusLine().getStatusCode() == 500 || response.getStatusLine().getStatusCode() == 401), "Invalid status code is displayed. "+ "Returned Status: "+response.getStatusLine().getStatusCode()+" "+response.getStatusLine().getReasonPhrase());
+		test.log(LogStatus.PASS, "Check status code when valid access_token is passed.");
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+		String line = "";
+		while ((line = rd.readLine()) != null) {
+			JSONParser parser = new JSONParser();
+			JSONObject api_response =(JSONObject) parser.parse(line);	
+			String result_data = api_response.get("result").toString();
+			Assert.assertEquals(result_data, "success", "API is returning error when valid access_token is passed.");
+			test.log(LogStatus.PASS, "Check API is returning success when valid access_token is passed.");
+			JSONObject json_data_object = (JSONObject) api_response.get("data");
+			test.log(LogStatus.PASS, "Check insertId is returned in response.");
+			
+			Assert.assertTrue(json_data_object.containsKey("insertId"), "insertId is not returned in response.");
+			
+		}
 		
 	}
 
