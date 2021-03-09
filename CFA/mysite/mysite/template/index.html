@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Online Shopping</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">       
+        <form action="/" method="post">
+        {% csrf_token %}
+          <section>
+            <input type="checkbox" id="groupId" name="groupId">
+            <label for="fname">Groups</label>
+            <input type="number" name="group" style="width: 13%;">
+          </section>
+
+          <section>
+            <input type="checkbox" id="campaignId" name="campaignId">
+            <label for="fname">Campaign</label>
+            <input type="number" name="campaign" style="width: 13%;">
+          </section>
+
+          <section>
+            <input type="checkbox" id="trackId" name="trackId">
+            <label for="fname">Tracking Number</label>
+            <input type="number" name="track" style="width: 13%;">
+          </section>
+
+          <section>
+            <input type="checkbox" id="callId" name="callId">
+            <label for="fname">Calls</label>
+            <input type="number" name="call" style="width: 13%;">
+          </section>
+          <section>
+            <input type="checkbox" id="tagId" name="tagId">
+            <label for="fname">Tags</label>
+            <input type="number" name="tag" style="width: 13%;">
+          </section>
+          <section>
+            <input type="checkbox" id="webhookId" name="webhookId">
+            <label for="fname">Webhooks</label>
+            <input type="number" name="webhook" style="width: 13%;">
+          </section>
+          <section>
+            <input type="checkbox" id="premiumId" name="premiumId">
+            <label for="fname">Premium Number</label>
+            <input type="number" name="premium" style="width: 13%;">
+          </section>
+          <section>
+            <input type="checkbox" id="reserveId" name="reserveId">
+            <label for="fname">Reserve Number</label>
+            <input type="number" name="reserve" style="width: 13%;">
+          </section>
+          <section>
+            <input type="checkbox" id="componentId" name="componentId">
+            <label for="fname">Component</label>
+            <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="component">
+              <option value=""></option>
+              <option>Spam Guard</option>
+              <option>Spam Guard</option>
+            </select>
+          </section>
+          <section>
+            <input type="submit" value="Submit">
+          </section>
+          </section>
+      </form>
+        </div>
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+  </body>
+</html>
