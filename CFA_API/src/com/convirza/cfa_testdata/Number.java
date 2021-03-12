@@ -6,6 +6,6 @@ public interface Number {
 	public void createReserveNumber();
 	
 	//create premium number
-	public void createPremiumNumber();
+	public void createPremiumNumber(String orgUnitID);
 
 }
