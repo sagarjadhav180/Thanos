@@ -22,7 +22,7 @@ public class CFANumber implements Number {
 		testDataPreparation.reserveNumberFromAPI(Long.parseLong(numberDetails[0]), Long.parseLong(numberDetails[1]));
 		
 		//making number premium
-		DBNumberUtil.makePremiumNumber(orgUnitID, numberDetails[0]);
+		DBNumberUtil.makePremiumNumber(orgUnitID, numberDetails[0], numberDetails[1]);
 	}
 
 }
