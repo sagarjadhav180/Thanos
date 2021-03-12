@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.convirza.cfa_testdata.TestDataUtil;
 import com.convirza.constants.Constants;
 import com.convirza.constants.EnvironmentConstants;
 import com.convirza.constants.FileConstants;
@@ -26,19 +27,31 @@ public class EnvionmentHelper {
 	}
 	
 	public void updateConfigProperties() {
+		
+		String username = TestDataUtil.getCredentails("username");
+		String password = TestDataUtil.getCredentails("password");
+		String staging =  TestDataUtil.getCredentails("staging");
+		
+		String API_URL = "stag-"+staging+"-cfaapi-1.convirza.com";
+		String APP_URL = "stag-"+staging+"-cmo-1.convirza.com";
+		String ENV = "staging".concat(staging);
+		
 		Map<String,String> configDetails = new HashMap<String, String>();
-		configDetails.put(EnvironmentConstants.ConfigConstants.URL, System.getProperty(EnvironmentConstants.API_URL));
-		configDetails.put(EnvironmentConstants.ConfigConstants.APP_URL, System.getProperty(EnvironmentConstants.APP_URL));
-		configDetails.put(EnvironmentConstants.ConfigConstants.AGENCY_ADMIN_EMAIL, System.getProperty(EnvironmentConstants.USERNAME));
-		configDetails.put(EnvironmentConstants.ConfigConstants.AGENCY_ADMIN_PASSWORD, System.getProperty(EnvironmentConstants.PASSWORD));
-		configDetails.put(EnvironmentConstants.ConfigConstants.ENV, System.getProperty(EnvironmentConstants.ENV));		
+		configDetails.put(EnvironmentConstants.ConfigConstants.URL, API_URL);
+		configDetails.put(EnvironmentConstants.ConfigConstants.APP_URL, APP_URL);		
+		configDetails.put(EnvironmentConstants.ConfigConstants.AGENCY_ADMIN_EMAIL, username);
+		configDetails.put(EnvironmentConstants.ConfigConstants.AGENCY_ADMIN_PASSWORD, password);
+		configDetails.put(EnvironmentConstants.ConfigConstants.ENV, ENV);		
 		HelperClass.write_config(configDetails);
 	}
 		
 	public void updatePostgresProperties() {
 		PropertiesReader dbConfig = new PropertiesReader();
 		Map<String,String> properties = new HashMap<String, String>();
-		properties.put(EnvironmentConstants.PostgresConstants.CONNECTION_URL, System.getProperty(EnvironmentConstants.DB_URL));
+	
+		String staging =  TestDataUtil.getCredentails("staging");
+		String CONNECTION_URL = "jdbc:postgresql://stag-"+staging+"-pg-1.convirza.com:5432";
+		properties.put(EnvironmentConstants.PostgresConstants.CONNECTION_URL, CONNECTION_URL);
 		dbConfig.writeProperties(FileConstants.getPostgresConfigFile(), properties);
 	}
 

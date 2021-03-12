@@ -40,6 +40,24 @@ public class TestDataUtil {
 	}
 
 	
+	public static String getCredentails(String entity) {
+		String Credentails = "";
+
+		Connection con = getConnectionForTestDataDB();
+
+		ResultSet resultSet = postgres.getResultSet("");
+
+		try {
+			while(resultSet.next()) {
+				Credentails = resultSet.getString("call_id");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			}
+		return Credentails;
+	}
+	
+	
 	public static List getComponentsToAdd(String entity) {
 		List<String> componentsToAdd= new ArrayList<String>();
 

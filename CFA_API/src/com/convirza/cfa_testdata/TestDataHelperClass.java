@@ -154,6 +154,9 @@ public class TestDataHelperClass extends BaseClass {
 	
 	@Test
 	public void numbers() {
+		invocationCountForReserveNumbers="0";
+		invocationCountForPremiumNumbers="2";
+		
 		CFANumber cfaNumber = new CFANumber();
 		Map<String, Object> compConfGroupHierarchyAgency = yamlReader.readGroupInfo(Constants.GroupHierarchy.AGENCY);
 		String agencyGroupId=compConfGroupHierarchyAgency.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
@@ -161,7 +164,7 @@ public class TestDataHelperClass extends BaseClass {
 		for(int i=1;i<=Integer.parseInt(invocationCountForReserveNumbers);i++) {
 			cfaNumber.createReserveNumber();
 		}
-		for(int i=1;i<=Integer.parseInt(invocationCountForPremiumNumbers);i++) {
+		for(int j=1;j<=Integer.parseInt(invocationCountForPremiumNumbers);j++) {
 			cfaNumber.createPremiumNumber(agencyGroupId);
 		}
 	}

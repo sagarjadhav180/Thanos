@@ -57,4 +57,16 @@ public class PostGresConnection implements DBConnection {
 		}
 		return result;
 	}
+	
+	public ResultSet insertQuery(String query) {
+		ResultSet result = null;
+		try {
+			Statement statement = connection.createStatement();
+			statement.executeUpdate(query);
+			result = statement.getGeneratedKeys();
+		} catch (Exception e) {
+			
+		}
+		return result;
+	}
 }	
