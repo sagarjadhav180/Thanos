@@ -2,19 +2,22 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from contactModule.models import SaveUserDetails, UserLogin
 from git import Repo
+from subprocess import call
 
 
 # Create your views here.
 
 def gitSave(request):
     try:
-        repo = Repo(r'https://github.com/sagarjadhav180/Thanos/.git')
+        '''repo = Repo('https://github.com/sagarjadhav180/Thanos.git')
         repo.git.add(update=True)
         repo.index.commit("New CFA User Details Saved in Postgresql")
         origin = repo.remote('origin')
         origin.push()
-        origin.push()
-        
+        origin.push()'''
+        call('git add .', shell = True)
+        call('git commit -m"New CFA User Details Saved in Postgresql"', shell = True)
+        call('git push origin master', shell = True)
     except Exception as e:
         print(e, type(e))
 
