@@ -11,5 +11,12 @@ class SaveUserDetails(models.Model):
     Webhooks = models.PositiveIntegerField()
     p_number = models.PositiveIntegerField()
     r_number = models.PositiveIntegerField()
+    stage = models.PositiveIntegerField()
     component = models.CharField(max_length=100)
+
+class UserLogin(models.Model):
+    userID = models.CharField(max_length=100)
+    passID = models.CharField(max_length=100)
+    def __str__(self):
+        return UserLogin  
 

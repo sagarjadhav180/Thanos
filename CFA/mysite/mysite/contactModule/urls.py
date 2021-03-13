@@ -4,8 +4,6 @@ from contactModule import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('/gitSave', views.gitSave, name='gitSave'),
     path('login', views.login, name='login'),
-    path('about', views.about, name='about'),
-    path('service', views.service, name='service'),
-    path('contact', views.contact, name='contact'),
 ]
