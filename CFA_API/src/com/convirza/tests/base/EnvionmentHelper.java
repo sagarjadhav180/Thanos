@@ -28,9 +28,9 @@ public class EnvionmentHelper {
 	
 	public void updateConfigProperties() {
 		
-		String username = TestDataUtil.getCredentails("username");
-		String password = TestDataUtil.getCredentails("password");
-		String staging =  TestDataUtil.getCredentails("staging");
+		String username = TestDataUtil.getCredentails("userID");
+		String password = TestDataUtil.getCredentails("passID");
+		String staging =  TestDataUtil.getCredentails("stage");
 		
 		String API_URL = "stag-"+staging+"-cfaapi-1.convirza.com";
 		String APP_URL = "stag-"+staging+"-cmo-1.convirza.com";

@@ -61,8 +61,8 @@ public class CFAComponent extends BaseClass implements Components{
 	
 	@SuppressWarnings("unchecked")
 	public void setComponentData() {
-		removeComponents = TestDataUtil.getComponentsToAdd("entity");
-		addComponents = TestDataUtil.getComponentsToRemove("entity");
+		removeComponents = TestDataUtil.getComponentsToAdd("component");
+//		addComponents = TestDataUtil.getComponentsToRemove("component");
 	}
 
 }

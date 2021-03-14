@@ -27,11 +27,11 @@ public class TestDataUtil {
 
 		Connection con = getConnectionForTestDataDB();
 
-		ResultSet resultSet = postgres.getResultSet("");
+		ResultSet resultSet = postgres.getResultSet("SELECT * FROM SaveUserDetails ORDER BY id DESC LIMIT 1");
 
 		try {
 			while(resultSet.next()) {
-				invocationCount = resultSet.getString("call_id");
+				invocationCount = resultSet.getString(entity);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -45,11 +45,16 @@ public class TestDataUtil {
 
 		Connection con = getConnectionForTestDataDB();
 
-		ResultSet resultSet = postgres.getResultSet("");
+		ResultSet resultSet = null;
+		try {
+			resultSet = postgres.getResultSet("SELECT * FROM public.UserLogin  LIMIT 1");			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
 		try {
 			while(resultSet.next()) {
-				Credentails = resultSet.getString("call_id");
+				Credentails = resultSet.getString(entity);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,11 +68,11 @@ public class TestDataUtil {
 
 		Connection con = getConnectionForTestDataDB();
 
-		ResultSet resultSet = postgres.getResultSet("");
+		ResultSet resultSet = postgres.getResultSet("SELECT * FROM public.SaveUserDetails ORDER BY id DESC LIMIT 1");
 
 		try {
 			while(resultSet.next()) {
-				Array entityToAdd = resultSet.getArray("entiry");
+				Array entityToAdd = resultSet.getArray("component");
 				componentsToAdd.add(entityToAdd.toString());
 			}
 		} catch (SQLException e) {
@@ -100,10 +105,11 @@ public class TestDataUtil {
 			PropertiesReader dbConfig = new PropertiesReader();
 			Properties dbConnection = dbConfig.readProperties(FileConstants.getPostgresConfigFile());
 			
-			connection = DriverManager.getConnection(dbConnection.getProperty(Constants.PostGresConfigConstants.CONNECTION_URL) + File.separator 
-					+ dbConnection.getProperty(Constants.PostGresConfigConstants.DATABASE) 
-					, dbConnection.getProperty(Constants.PostGresConfigConstants.USERNAME)
-					, dbConnection.getProperty(Constants.PostGresConfigConstants.PASSWORD)); 
+			String dbUrl = "jdbc:postgresql://test.cgr22uvzuj9v.us-east-2.rds.amazonaws.com:5432/test_database";
+			String username = "postgres";
+			String password = "Password12345";
+					
+			connection=DriverManager.getConnection(dbUrl,username,password);	
 			
 			Class.forName(dbConnection.getProperty(Constants.PostGresConfigConstants.DRIVER));
 			

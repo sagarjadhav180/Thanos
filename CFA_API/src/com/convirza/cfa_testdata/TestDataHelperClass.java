@@ -172,11 +172,12 @@ public class TestDataHelperClass extends BaseClass {
 	
 	public void setInvoactionCounts() {
 		invocationCountForGroups = TestDataUtil.getInvocationCount("groups");
-		invocationCountForGroups = TestDataUtil.getInvocationCount("campaigns");
-		invocationCountForGroups = TestDataUtil.getInvocationCount("trackingNUmbers");
+		invocationCountForGroups = TestDataUtil.getInvocationCount("campaign");
+		invocationCountForGroups = TestDataUtil.getInvocationCount("t_number");
 		invocationCountForGroups = TestDataUtil.getInvocationCount("calls");
-		invocationCountForReserveNumbers = TestDataUtil.getInvocationCount("reserve_numbers");
-		invocationCountForPremiumNumbers = TestDataUtil.getInvocationCount("premium_numbers");
+		invocationCountForWebhooks = TestDataUtil.getInvocationCount("Webhooks");
+		invocationCountForReserveNumbers = TestDataUtil.getInvocationCount("r_number");
+		invocationCountForPremiumNumbers = TestDataUtil.getInvocationCount("p_number");
 	}
 	
 }
