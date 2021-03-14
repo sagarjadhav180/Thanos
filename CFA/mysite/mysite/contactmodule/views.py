@@ -15,9 +15,11 @@ def gitSave(request):
         origin = repo.remote('origin')
         origin.push()
         origin.push()'''
+        call('git config credential.helper store', shell = True)
         call('git add .', shell = True)
         call('git commit -m"New CFA User Details Saved in Postgresql"', shell = True)
         call('git push origin master', shell = True)
+        
     except Exception as e:
         print(e, type(e))
 
