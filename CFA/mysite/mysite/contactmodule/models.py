@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import CharField, Model 
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
@@ -31,7 +33,8 @@ class saveuserdata(models.Model):
     p_number = models.PositiveIntegerField()
     r_number = models.PositiveIntegerField()
     stage = models.PositiveIntegerField()
-    component = models.CharField(max_length=100)
+    component = ArrayField(models.CharField(max_length=100, blank=True),size=20)
+    # component = models.CharField(max_length=100)
 
 class userlogindata(models.Model):
     tableName = 'userlogindata'
