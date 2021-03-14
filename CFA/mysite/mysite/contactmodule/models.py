@@ -34,7 +34,7 @@ class saveuserdata(models.Model):
     component = models.CharField(max_length=100)
 
 class userlogindata(models.Model):
-    tableName = 'userlogin'
+    tableName = 'userlogindata'
     userID = models.CharField(max_length=100)
     passID = models.CharField(max_length=100)
     def __str__(self):

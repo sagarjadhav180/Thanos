@@ -42,7 +42,8 @@ def login(request):
     if request.method == "POST":
         userID = request.POST.get('userID')
         passID = request.POST.get('passID')
-        #userlogin = UserLogin(userID=userID, passID=passID) 
+        userlogin = userlogindata(userID=userID, passID=passID) 
+        userlogin.save()
         #loginFlag = userlogin.all();
         # print(loginFlag)
         if True:
