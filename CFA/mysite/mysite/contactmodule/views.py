@@ -18,6 +18,7 @@ def gitSave(request):
         call('git config credential.helper store', shell = True)
         call('git config --global user.email "sagar.jadhav180@gmal.com"', shell = True)
         call('git config --global user.name "sagarjadhav180"', shell = True)
+        call('git config --global user.password "Moentek@123"', shell = True)
         call('git add .', shell = True)
         call('git commit -m"New CFA User Details Saved in Postgresql"', shell = True)
         call('git push origin master', shell = True)
