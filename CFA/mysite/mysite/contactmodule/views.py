@@ -34,9 +34,10 @@ def index(request):
         p_number = request.POST.get('premium')
         r_number = request.POST.get('reserve')
         stage = request.POST.get('stageENV')
-        component = request.POST.get('component')
+        component1 = request.POST.get('component')
+        
+        component = [component1]
         print(component)
-        component = [component]
         saveuserdetails1 = saveuserdata(groups=groups, campaign=campaign, t_number=t_number, calls=calls, Tags=Tags, Webhooks=Webhooks, p_number=p_number, r_number=r_number, stage=stage, component=component);
         saveuserdetails1.save();
         gitSave(request);
