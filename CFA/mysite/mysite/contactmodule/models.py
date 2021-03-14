@@ -33,7 +33,7 @@ class saveuserdata(models.Model):
     p_number = models.PositiveIntegerField()
     r_number = models.PositiveIntegerField()
     stage = models.PositiveIntegerField()
-    component = ArrayField(models.CharField(max_length=100, blank=True),size=20)
+    components = ArrayField(models.CharField(max_length=100, blank=True),size=20)
     # component = models.CharField(max_length=100)
 
 class userlogindata(models.Model):
