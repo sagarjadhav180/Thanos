@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,9 +26,9 @@ public class TestDataUtil {
 	public static String getInvocationCount(String entity) {
 		String invocationCount= "";
 
-		Connection con = getConnectionForTestDataDB();
+		Connection connection = getConnectionForTestDataDB();
 
-		ResultSet resultSet = postgres.getResultSet("SELECT * FROM SaveUserDetails ORDER BY id DESC LIMIT 1");
+		ResultSet resultSet = postgres.getResultSet("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
 
 		try {
 			while(resultSet.next()) {
@@ -43,11 +44,14 @@ public class TestDataUtil {
 	public static String getCredentails(String entity) {
 		String Credentails = "";
 
-		Connection con = getConnectionForTestDataDB();
+		Connection connection = getConnectionForTestDataDB();
 
 		ResultSet resultSet = null;
+		
 		try {
-			resultSet = postgres.getResultSet("SELECT * FROM public.UserLogin  LIMIT 1");			
+			Statement statement = connection.createStatement();
+			resultSet = statement.executeQuery("SELECT * FROM contactmodule_userlogindata ORDER BY id DESC LIMIT 1");
+//			resultSet = postgres.getResultSet("SELECT * FROM contactmodule_userlogindata ORDER BY id DESC LIMIT 1");			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
