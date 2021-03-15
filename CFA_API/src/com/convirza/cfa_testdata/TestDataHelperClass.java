@@ -26,13 +26,13 @@ public class TestDataHelperClass extends BaseClass {
 	String access_token_location_admin;
 	String access_token_agency_admin;
 	
-	String invocationCountForGroups;
-	String invocationCountForCampaigns;
-	String invocationCountForTrackingNumbers;
-	String invocationCountForCalls;
-	String invocationCountForWebhooks;
-	String invocationCountForReserveNumbers;
-	String invocationCountForPremiumNumbers;
+	int invocationCountForGroups;
+	int invocationCountForCampaigns;
+	int invocationCountForTrackingNumbers;
+	int invocationCountForCalls;
+	int invocationCountForWebhooks;
+	int invocationCountForReserveNumbers;
+	int invocationCountForPremiumNumbers;
 	
 	@BeforeClass
 	public void generateOuthTokenForCompanyAndLocationUser() throws ClientProtocolException, URISyntaxException, IOException, ParseException, SQLException    {
@@ -63,7 +63,7 @@ public class TestDataHelperClass extends BaseClass {
 		Map<String, Object> compConfGroupHierarchyCompany = yamlReader.readGroupInfo(Constants.GroupHierarchy.COMPANY);
 		String companyGroupId=compConfGroupHierarchyCompany.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 		
-		for(int i=1;i<=Integer.parseInt(invocationCountForGroups);i++) {
+		for(int i=1;i<=invocationCountForGroups;i++) {
 			cfaModules.uploadGroups("CFA TEST GROUP COMPANY-"+RandomContentGenerator.getRandomString(3), access_token_agency_admin, agencyGroupId, agencyGroupId); //--company
 			cfaModules.uploadGroups("CFA TEST GROUP LOCATION-"+RandomContentGenerator.getRandomString(3), access_token_company_admin, companyGroupId, agencyGroupId); //--location			
 		}
@@ -91,7 +91,7 @@ public class TestDataHelperClass extends BaseClass {
 		Map<String, Object> compConfGroupHierarchyLocation = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
 		String locationGroupId=compConfGroupHierarchyLocation.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 
-		for(int i=1;i<=Integer.parseInt(invocationCountForCampaigns);i++) {
+		for(int i=1;i<=invocationCountForCampaigns;i++) {
 			cfaModules.uploadCampaigns("CFA TEST CAMPAIGN AGENCY-"+RandomContentGenerator.getRandomString(3), access_token_agency_admin, agencyGroupId, agencyUserId); //--agency
 			cfaModules.uploadCampaigns("CFA TEST CAMPAIGN COMPANY-"+RandomContentGenerator.getRandomString(3), access_token_company_admin, companyGroupId, companyUserId); //--company
 			cfaModules.uploadCampaigns("CFA TEST CAMPAIGN LOCATION-"+RandomContentGenerator.getRandomString(3), access_token_location_admin, locationGroupId, locationUserId); //--location			
@@ -104,7 +104,7 @@ public class TestDataHelperClass extends BaseClass {
 	public void trackingNumbers() throws Exception {
 		CFAModules cfaModules = new CFAModules();
 
-		for(int i=1;i<=Integer.parseInt(invocationCountForTrackingNumbers);i++) {
+		for(int i=1;i<=invocationCountForTrackingNumbers;i++) {
 			cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.AGENCY, access_token_agency_admin); //--agency
 			cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.COMPANY, access_token_company_admin); //--company
 			cfaModules.uploadTrackingNumbers(Constants.GroupHierarchy.LOCATION, access_token_location_admin); //--location			
@@ -117,7 +117,7 @@ public class TestDataHelperClass extends BaseClass {
 	public void calls() throws Exception {
 		CFAModules cfaModules = new CFAModules();
 
-		for(int i=1;i<=Integer.parseInt(invocationCountForCalls);i++) {
+		for(int i=1;i<=invocationCountForCalls;i++) {
 			cfaModules.uploadCalls(access_token_agency_admin); //--agency
 			cfaModules.uploadCalls(access_token_company_admin); //--company
 			cfaModules.uploadCalls(access_token_location_admin); //--location			
@@ -137,7 +137,7 @@ public class TestDataHelperClass extends BaseClass {
 		Map<String, Object> compConfGroupHierarchyLocation = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
 		String locationGroupId=compConfGroupHierarchyLocation.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 
-		for(int i=1;i<=Integer.parseInt(invocationCountForWebhooks);i++) {
+		for(int i=1;i<=invocationCountForWebhooks;i++) {
 			cfaModules.uploadWebHooks(access_token_agency_admin, agencyGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--agency
 			cfaModules.uploadWebHooks(access_token_company_admin, companyGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--company
 			cfaModules.uploadWebHooks(access_token_location_admin, locationGroupId, "CFA TEST WEBHOOK AGENCY-"+RandomContentGenerator.getRandomString(3)); //--location			
@@ -155,17 +155,15 @@ public class TestDataHelperClass extends BaseClass {
 	
 	@Test
 	public void numbers() {
-		invocationCountForReserveNumbers="0";
-		invocationCountForPremiumNumbers="2";
 		
 		CFANumber cfaNumber = new CFANumber();
 		Map<String, Object> compConfGroupHierarchyAgency = yamlReader.readGroupInfo(Constants.GroupHierarchy.AGENCY);
 		String agencyGroupId=compConfGroupHierarchyAgency.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 		
-		for(int i=1;i<=Integer.parseInt(invocationCountForReserveNumbers);i++) {
+		for(int i=1;i<=invocationCountForReserveNumbers;i++) {
 			cfaNumber.createReserveNumber();
 		}
-		for(int j=1;j<=Integer.parseInt(invocationCountForPremiumNumbers);j++) {
+		for(int j=1;j<=invocationCountForPremiumNumbers;j++) {
 			cfaNumber.createPremiumNumber(agencyGroupId);
 		}
 	}

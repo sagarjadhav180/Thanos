@@ -5,10 +5,12 @@
     <classes>
       <class name="com.convirza.cfa_testdata.TestDataHelperClass">
         <methods>
+          <include name="webhooks"/>
           <include name="campaigns"/>
+          <include name="components"/>
           <include name="tearDown"/>
-          <include name="generateOuthTokenForCompanyAndLocationUser"/>
-          <include name="send_report"/>
+          <include name="numbers"/>
+          <include name="groups"/>
           <include name="calls"/>
           <include name="trackingNumbers"/>
           <include name="setup"/>

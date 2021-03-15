@@ -31,11 +31,11 @@ public class EnvionmentHelper {
 		
 		String username = TestDataUtil.getCredentails("userID");
 		String password = TestDataUtil.getCredentails("passID");
-		String staging =  TestDataUtil.getInvocationCount("stage");
+		int staging =  TestDataUtil.getInvocationCount("stage");
 		
 		String API_URL = "stag-"+staging+"-cfaapi-1.convirza.com";
 		String APP_URL = "stag-"+staging+"-cmo-1.convirza.com";
-		String ENV = "staging".concat(staging);
+		String ENV = "staging"+staging;
 		
 		Map<String,String> configDetails = new HashMap<String, String>();
 		configDetails.put(EnvironmentConstants.ConfigConstants.URL, API_URL);
@@ -50,7 +50,7 @@ public class EnvionmentHelper {
 		PropertiesReader dbConfig = new PropertiesReader();
 		Map<String,String> properties = new HashMap<String, String>();
 	
-		String staging =  TestDataUtil.getInvocationCount("stage");
+		int staging =  TestDataUtil.getInvocationCount("stage");
 		String CONNECTION_URL = "jdbc:postgresql://stag-"+staging+"-pg-1.convirza.com:5432";
 		properties.put(EnvironmentConstants.PostgresConstants.CONNECTION_URL, CONNECTION_URL);
 		dbConfig.writeProperties(FileConstants.getPostgresConfigFile(), properties);

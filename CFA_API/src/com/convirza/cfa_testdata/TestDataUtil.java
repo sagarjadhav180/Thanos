@@ -23,17 +23,17 @@ public class TestDataUtil {
 	private static PostGresConnection postgres;
 	static Connection connection;
 	
-	public static String getInvocationCount(String entity) throws SQLException {
-		String invocationCount= "";
+	public static int getInvocationCount(String entity) throws SQLException {
+		int invocationCount= 0;
 
 		Connection connection = getConnectionForTestDataDB();
 		
 		Statement statement = connection.createStatement();
-		ResultSet resultSet = statement.executeQuery("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM userdetail_saveuserdata ORDER BY id DESC LIMIT 1");
 		
 		try {
 			while(resultSet.next()) {
-				invocationCount = resultSet.getString(entity);
+				invocationCount = resultSet.getInt(entity);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,7 +51,7 @@ public class TestDataUtil {
 		
 		try {
 			Statement statement = connection.createStatement();
-			resultSet = statement.executeQuery("SELECT * FROM contactmodule_userlogindata ORDER BY id DESC LIMIT 1");
+			resultSet = statement.executeQuery("SELECT * FROM userdetail_logindata ORDER BY id DESC LIMIT 1");
 //			resultSet = postgres.getResultSet("SELECT * FROM contactmodule_userlogindata ORDER BY id DESC LIMIT 1");			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -71,10 +71,10 @@ public class TestDataUtil {
 	public static List getComponentsToAdd(String entity) throws SQLException {
 		List<String> componentsToAdd= new ArrayList<String>();
 
-		Connection con = getConnectionForTestDataDB();
+		Connection connection = getConnectionForTestDataDB();
 
 		Statement statement = connection.createStatement();
-		ResultSet resultSet = statement.executeQuery("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM userdetail_saveuserdata ORDER BY id DESC LIMIT 1");
 		
 		try {
 			while(resultSet.next()) {

@@ -42,8 +42,8 @@ public class BaseClass {
 		 envionmentHelper.updateEnvironmentConfigs();
 		 envionmentHelper.updateTestDataWithConfig();
 		 getAccessToken();
-		 TestDataPreparation testDataPrepare = new TestDataPreparation();
-		 testDataPrepare.createTestData();
+//		 TestDataPreparation testDataPrepare = new TestDataPreparation();
+//		 testDataPrepare.createTestData();
 
 	}
 	
