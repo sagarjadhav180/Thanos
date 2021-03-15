@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
-from UserDetail.models import LoginData, SaveUserData
+from userdetail.models import logindata, saveuserdata
 from git import Repo
 from subprocess import call
 
@@ -35,7 +35,7 @@ def index(request):
         r_number = request.POST.get('reserve')
         stage = request.POST.get('stageENV')
         components = request.POST.get('component')
-        saveuserdetails1 = SaveUserData(groups=groups, campaign=campaign, t_number=t_number, calls=calls, Tags=Tags, Webhooks=Webhooks, p_number=p_number, r_number=r_number, stage=stage, components=components);
+        saveuserdetails1 = saveuserdata(groups=groups, campaign=campaign, t_number=t_number, calls=calls, Tags=Tags, Webhooks=Webhooks, p_number=p_number, r_number=r_number, stage=stage, components=components);
         saveuserdetails1.save();
         gitSave(request);
     return render(request, "index.html");
@@ -44,7 +44,7 @@ def login(request):
     if request.method == "POST":
         userID = request.POST.get('userID')
         passID = request.POST.get('passID')
-        userlogin = LoginData(userID=userID, passID=passID) 
+        userlogin = logindata(userID=userID, passID=passID) 
         userlogin.save()
         if True:
             messages.success(request, 'Profile details updated.')

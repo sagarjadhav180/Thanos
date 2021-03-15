@@ -6,12 +6,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('UserDetail', '0002_remove_savedata_idflag'),
+        ('userdetail', '0002_remove_savedata_idflag'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='SaveUserData',
+            name='saveuserdata',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('groups', models.PositiveIntegerField()),

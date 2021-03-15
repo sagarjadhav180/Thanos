@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-class LoginData(models.Model):
+class logindata(models.Model):
     tableName = 'logindata'
     userID = models.CharField(max_length=100)
     passID = models.CharField(max_length=100)
     def __str__(self):
         return self.tableName  
 
-class SaveUserData(models.Model):
+class saveuserdata(models.Model):
     tableName = 'saveuserdata'
     groups = models.PositiveIntegerField()
     campaign = models.PositiveIntegerField()
