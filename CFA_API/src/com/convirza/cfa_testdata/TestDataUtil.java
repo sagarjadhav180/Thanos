@@ -23,13 +23,14 @@ public class TestDataUtil {
 	private static PostGresConnection postgres;
 	static Connection connection;
 	
-	public static String getInvocationCount(String entity) {
+	public static String getInvocationCount(String entity) throws SQLException {
 		String invocationCount= "";
 
 		Connection connection = getConnectionForTestDataDB();
-
-		ResultSet resultSet = postgres.getResultSet("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
-
+		
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
+		
 		try {
 			while(resultSet.next()) {
 				invocationCount = resultSet.getString(entity);
@@ -67,13 +68,14 @@ public class TestDataUtil {
 	}
 	
 	
-	public static List getComponentsToAdd(String entity) {
+	public static List getComponentsToAdd(String entity) throws SQLException {
 		List<String> componentsToAdd= new ArrayList<String>();
 
 		Connection con = getConnectionForTestDataDB();
 
-		ResultSet resultSet = postgres.getResultSet("SELECT * FROM public.SaveUserDetails ORDER BY id DESC LIMIT 1");
-
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM contactmodule_saveuserdata ORDER BY id DESC LIMIT 1");
+		
 		try {
 			while(resultSet.next()) {
 				Array entityToAdd = resultSet.getArray("component");
