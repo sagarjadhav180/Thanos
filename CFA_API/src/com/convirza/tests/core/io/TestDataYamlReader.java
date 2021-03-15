@@ -16,7 +16,7 @@ public class TestDataYamlReader extends YamlReader {
 		Map<String, Object> confGroupHierarchy = (Map<String, Object>)confGroupObj.get(groupHierarchy);
 		return confGroupHierarchy;
 	}
-	
+
 	public Map<String, Object> readUserInfo(String groupHierarchy) {
 		yamlTestData = readYaml(FileConstants.getYamlTestDataConfig());		
 		Map<String, Object> confConvirzaObj = (Map<String, Object>) yamlTestData.get(TestDataYamlConstants.CONVIRZA);

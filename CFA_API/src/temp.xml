@@ -6,10 +6,7 @@
 	<test name="callflow" preserve-order="true" parallel="false">
 		<classes>
 
-			<class name="callflow.PostTrackingNumber" >
-			<methods>
-			<include name="PostCallFlowForSimpleRouteByAgencyAdmin"></include>
-			</methods>
+			<class name="com.convirza.cfa_testdata.TestDataHelperClass" >
 			
 			</class>
 		</classes>

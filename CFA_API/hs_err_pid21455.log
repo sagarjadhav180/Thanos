@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f36fca74401, pid=21455, tid=21470
+#
+# JRE version: OpenJDK Runtime Environment (11.0.10+9) (build 11.0.10+9-Ubuntu-0ubuntu1.18.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.10+9-Ubuntu-0ubuntu1.18.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2401]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/comp/git/Thanos/CFA_API/core.21455)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:40579 -ea -Denv=staging7 -Dapiurl=stag-7-cfaapi-1.convirza.com -Dappurl=stag-7-cmo-1.convirza.com -Ddburl=jdbc:postgresql://stag-7-pg-1.convirza.com:5432 -Dusername=madhur2_newui@yopmail.com -Dpassword=lmc2demo -Dfile.encoding=UTF-8 org.testng.remote.RemoteTestNG -serport 37309 -protocol json -d /home/comp/git/Thanos/CFA_API/test-output /home/comp/git/Thanos/CFA_API/src/temp.xml
+
+Host: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz, 4 cores, 7G, Ubuntu 18.04.5 LTS
+Time: Sun Mar 14 14:36:43 2021 IST elapsed time: 397.072066 seconds (0d 0h 6m 37s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f36f8118800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=21470, stack(0x00007f36b7eff000,0x00007f36b8000000)]
+
+Stack: [0x00007f36b7eff000,0x00007f36b8000000],  sp=0x00007f36b7ffd1e0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x2401]
+C  [libjimage.so+0x30ea]
+C  [libjimage.so+0x35c6]  JIMAGE_FindResource+0xd6
+V  [libjvm.so+0x5c0fde]

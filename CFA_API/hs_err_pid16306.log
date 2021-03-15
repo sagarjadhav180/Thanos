@@ -1,0 +1,21 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fd2b630e401, pid=16306, tid=16322
+#
+# JRE version: OpenJDK Runtime Environment (11.0.10+9) (build 11.0.10+9-Ubuntu-0ubuntu1.18.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.10+9-Ubuntu-0ubuntu1.18.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2401]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/comp/git/Thanos/CFA_API/core.16306)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:34617 -ea -Denv=staging7 -Dapiurl=stag-7-cfaapi-1.convirza.com -Dappurl=stag-7-cmo-1.convirza.com -Ddburl=jdbc:postgresql://stag-7-pg-1.convirza.com:5432 -Dusername=madhur2_newui@yopmail.com -Dpassword=lmc2demo -Dfile.encoding=UTF-8 org.testng.remote.RemoteTestNG -serport 38415 -protocol json -d /home/comp/git/Thanos/CFA_API/test-output /home/comp/git/Thanos/CFA_API/src/temp.xml
+
+Host: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz, 4 cores, 7G, 

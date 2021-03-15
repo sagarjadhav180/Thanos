@@ -54,7 +54,7 @@
 					<i class='mdi-hardware-desktop-windows'></i>
 				</li>
 				<li>
-					<span class='suite-started-time'>2020-12-22 12:08:18</span>
+					<span class='suite-started-time'>2021-03-15 20:04:46</span>
 				</li>
 				<li>
 					<span>v2.41.1</span>
@@ -84,25 +84,25 @@
 					<div class='col l2 m4 s12'>
 						<div class='card suite-total-time-current'> 
 							<span class='panel-name'>Total Time Taken (Current Run)</span> 
-							<span class='suite-total-time-current-value panel-lead'>0h 0m 21s+89ms</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 5m 9s+236ms</span> 
 						</div> 
 					</div>
 					<div class='col l2 m4 s12'>
 						<div class='card suite-total-time-overall'> 
 							<span class='panel-name'>Total Time Taken (Overall)</span> 
-							<span class='suite-total-time-overall-value panel-lead'>0h 0m 21s+89ms</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 5m 9s+236ms</span> 
 						</div> 
 					</div>
 					<div class='col l2 m4 s6 suite-start-time'>
 						<div class='card accent green-accent'> 
 							<span class='panel-name'>Start</span> 
-							<span class='panel-lead suite-started-time'>2020-12-22 12:07:57</span> 
+							<span class='panel-lead suite-started-time'>2021-03-15 19:59:37</span> 
 						</div> 
 					</div>
 					<div class='col l2 m4 s6 suite-end-time'>
 						<div class='card accent pink-accent'> 
 							<span class='panel-name'>End</span> 
-							<span class='panel-lead suite-ended-time'>2020-12-22 12:08:18</span> 
+							<span class='panel-lead suite-ended-time'>2021-03-15 20:04:46</span> 
 						</div> 
 					</div>
 				</div>
@@ -177,7 +177,7 @@
 										</tr>
 										<tr>
 											<td>Java Version</td>
-											<td>11.0.9.1</td>
+											<td>11.0.10</td>
 										</tr>
 										<tr>
 											<td>Host Name</td>
@@ -201,7 +201,12 @@
 									<tbody>
 											<tr>
 												<td>
-													CFA POST /callflow API
+													CFA POST /group API
+												</td>
+											</tr>
+											<tr>
+												<td>
+													CFA POST /webhook API
 												</td>
 											</tr>
 									</tbody>
@@ -237,7 +242,8 @@
 										<i class='mdi-maps-local-offer'></i>
 									</a>
 									<ul id='category-toggle' class='dropdown-content'>
-											<li class='CFA POST /callflow API'><a href='#!'>CFA POST /callflow API</a></li>
+											<li class='CFA POST /group API'><a href='#!'>CFA POST /group API</a></li>
+											<li class='CFA POST /webhook API'><a href='#!'>CFA POST /webhook API</a></li>
 										<li class='divider'></li>
 										<li class='clear'><a href='#!'>Clear Filters</a></li>
 									</ul>
@@ -269,17 +275,17 @@
 						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
 							<div class='wrapper'>
 								<ul id='test-collection' class='test-collection'>
-										<li class='collection-item test displayed active pass ' extentid='8191c8b6-4096-4779-8db7-5b1328d225e4'>
+										<li class='collection-item test displayed active fail ' extentid='2ac0e175-0597-4cbc-bf96-0f41e1d2d617'>
 											<div class='test-head'>
 												<span class='test-name'>get_access_token </span>
-												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
 												<span class='category-assigned hide '></span>
 											</div>
 											<div class='test-body'>
 												<div class='test-info'>
-													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2020-12-22 12:07:58</span>
-													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'></span>
-													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'></span>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 19:59:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2021-03-15 20:04:24</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 4m 36s+421ms</span>
 												</div>
 												<div class='test-desc'>Get the access_token from outh/token api</div>
 												<div class='test-attributes'>
@@ -296,33 +302,23 @@
 														<tbody>
 																<tr>
 																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-																	<td class='timestamp'>12:08:05</td>
+																	<td class='timestamp'>19:59:51</td>
 																	<td class='step-details'>Get the access token from access_token api</td>
 																</tr>
 																<tr>
 																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:05</td>
-																	<td class='step-details'>Fetched access_token: 02832197-3ef4-427a-89bc-eb514f1d887e</td>
+																	<td class='timestamp'>19:59:51</td>
+																	<td class='step-details'>Fetched access_token: 0bc09bca-8fd1-4127-89ed-6145f215beea</td>
 																</tr>
 																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:08</td>
-																	<td class='step-details'>Verifying if success message is displayed</td>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>20:04:24</td>
+																	<td class='step-details'>null</td>
 																</tr>
 																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:08</td>
-																	<td class='step-details'>Verifying if err is null</td>
-																</tr>
-																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:13</td>
-																	<td class='step-details'>Verifying if success message is displayed</td>
-																</tr>
-																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:13</td>
-																	<td class='step-details'>Verifying if err is null</td>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>20:04:24</td>
+																	<td class='step-details'>null</td>
 																</tr>
 														</tbody>
 													</table>
@@ -331,22 +327,22 @@
 												</div>
 											</div>
 										</li>
-										<li class='collection-item test displayed active pass ' extentid='7a2a986e-95ff-4c64-8457-8ffeb159ad35'>
+										<li class='collection-item test displayed active pass ' extentid='817d3960-d55d-45f3-9ddc-612873908776'>
 											<div class='test-head'>
-												<span class='test-name'>PostCallFlowForSimpleRouteByAgencyAdmin </span>
+												<span class='test-name'>post_group_with_valid_access_token </span>
 												<span class='test-status label right outline capitalize pass'>pass</span>
-												<span class='category-assigned hide  cfapost/callflowapi'></span>
+												<span class='category-assigned hide  cfapost/groupapi'></span>
 											</div>
 											<div class='test-body'>
 												<div class='test-info'>
-													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2020-12-22 12:08:13</span>
-													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2020-12-22 12:08:18</span>
-													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 5s+298ms</span>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 20:04:26</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'></span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'></span>
 												</div>
-												<div class='test-desc'>To validate whether agency level admin user is able to create callflow of route type Simple</div>
+												<div class='test-desc'>To validate whether user is create group through post group api with valid access_token</div>
 												<div class='test-attributes'>
 														<div class='categories'>
-																<span class='category text-white'>CFA POST /callflow API</span>
+																<span class='category text-white'>CFA POST /group API</span>
 														</div>
 												</div>
 												<div class='test-steps'>
@@ -360,14 +356,234 @@
 														</thead>
 														<tbody>
 																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:18</td>
-																	<td class='step-details'>Verifying if success is returned in result</td>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:28</td>
+																	<td class='step-details'>Check status code when valid access_token is passed.</td>
 																</tr>
 																<tr>
-																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-																	<td class='timestamp'>12:08:18</td>
-																	<td class='step-details'>Verifying if err is null</td>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:28</td>
+																	<td class='step-details'>Check API is returning success when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:28</td>
+																	<td class='step-details'>Check group_id is returned in response.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:28</td>
+																	<td class='step-details'>Check proper entry_count is displayed in response.</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='7e80920d-3ac0-48d6-a077-9efec0c0c8b1'>
+											<div class='test-head'>
+												<span class='test-name'>post_group_with_valid_access_token </span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
+												<span class='category-assigned hide  cfapost/groupapi'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 20:04:28</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2021-03-15 20:04:30</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 2s+366ms</span>
+												</div>
+												<div class='test-desc'>To validate whether user is create group through post group api with valid access_token</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>CFA POST /group API</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:30</td>
+																	<td class='step-details'>Check status code when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:30</td>
+																	<td class='step-details'>Check API is returning success when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:30</td>
+																	<td class='step-details'>Check group_id is returned in response.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:30</td>
+																	<td class='step-details'>Check proper entry_count is displayed in response.</td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>20:04:41</td>
+																	<td class='step-details'>null</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='33f3b85d-bd86-4ce7-87f3-5bf6a5f70e31'>
+											<div class='test-head'>
+												<span class='test-name'>uploadWebHooks </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  cfapost/webhookapi'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 20:04:41</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'></span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'></span>
+												</div>
+												<div class='test-desc'>To validate whether user is able to create webhook valid access_token</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>CFA POST /webhook API</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:43</td>
+																	<td class='step-details'>Check status code when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:43</td>
+																	<td class='step-details'>Check API is returning success when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:43</td>
+																	<td class='step-details'>Check insertId is returned in response.</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='632f46b5-16e3-46af-8793-6539bbacd8ac'>
+											<div class='test-head'>
+												<span class='test-name'>uploadWebHooks </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  cfapost/webhookapi'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 20:04:43</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'></span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'></span>
+												</div>
+												<div class='test-desc'>To validate whether user is able to create webhook valid access_token</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>CFA POST /webhook API</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:44</td>
+																	<td class='step-details'>Check status code when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:44</td>
+																	<td class='step-details'>Check API is returning success when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:44</td>
+																	<td class='step-details'>Check insertId is returned in response.</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='6e1263f2-db26-4101-9e3e-e01c840d23ba'>
+											<div class='test-head'>
+												<span class='test-name'>uploadWebHooks </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  cfapost/webhookapi'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2021-03-15 20:04:44</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2021-03-15 20:04:46</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 1s+585ms</span>
+												</div>
+												<div class='test-desc'>To validate whether user is able to create webhook valid access_token</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>CFA POST /webhook API</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:46</td>
+																	<td class='step-details'>Check status code when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:46</td>
+																	<td class='step-details'>Check API is returning success when valid access_token is passed.</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>20:04:46</td>
+																	<td class='step-details'>Check insertId is returned in response.</td>
 																</tr>
 														</tbody>
 													</table>
@@ -425,7 +641,42 @@
 									<ul id='cat-collection' class='cat-collection'>
 											<li class='category-item displayed'>
 												<div class='cat-head'>
-													<span class='category-name'>CFA POST /callflow API</span>
+													<span class='category-name'>CFA POST /group API</span>
+												</div>
+												<div class='category-status-counts'>
+														<span class='fail label dot'>Fail: 1</span>
+												</div>
+												<div class='cat-body'>
+													<div class='category-status-counts'>
+														<div class='button-group'>
+															<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
+															<a href='#!' class='fail label filter'>Fail <span class='icon'>1</span></a>
+															<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+														</div>
+													</div>
+													<div class='cat-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																	<tr class='fail'>
+																		<td>2021-03-15 20:04:28</td>
+																		<td><span class='category-link linked' extentid='7e80920d-3ac0-48d6-a077-9efec0c0c8b1'>post_group_with_valid_access_token</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+															<tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+											<li class='category-item displayed'>
+												<div class='cat-head'>
+													<span class='category-name'>CFA POST /webhook API</span>
 												</div>
 												<div class='category-status-counts'>
 														<span class='pass label dot'>Pass: 1</span>
@@ -449,8 +700,8 @@
 															</thead>
 															<tbody>
 																	<tr class='pass'>
-																		<td>2020-12-22 12:08:13</td>
-																		<td><span class='category-link linked' extentid='7a2a986e-95ff-4c64-8457-8ffeb159ad35'>PostCallFlowForSimpleRouteByAgencyAdmin</span></td>
+																		<td>2021-03-15 20:04:44</td>
+																		<td><span class='category-link linked' extentid='6e1263f2-db26-4101-9e3e-e01c840d23ba'>uploadWebHooks</span></td>
 																		<td><div class='status label capitalize pass'>pass</div></td>
 																	</tr>
 															<tbody>

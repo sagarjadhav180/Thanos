@@ -1,6 +1,7 @@
 package com.convirza.tests.base;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,16 +22,16 @@ public class EnvionmentHelper {
 
 	private String zip;
 
-	public void updateEnvironmentConfigs() {
+	public void updateEnvironmentConfigs() throws SQLException {
 		updateConfigProperties();
 		updatePostgresProperties();
 	}
 	
-	public void updateConfigProperties() {
+	public void updateConfigProperties() throws SQLException {
 		
 		String username = TestDataUtil.getCredentails("userID");
 		String password = TestDataUtil.getCredentails("passID");
-		String staging =  TestDataUtil.getCredentails("stage");
+		String staging =  TestDataUtil.getInvocationCount("stage");
 		
 		String API_URL = "stag-"+staging+"-cfaapi-1.convirza.com";
 		String APP_URL = "stag-"+staging+"-cmo-1.convirza.com";
@@ -45,11 +46,11 @@ public class EnvionmentHelper {
 		HelperClass.write_config(configDetails);
 	}
 		
-	public void updatePostgresProperties() {
+	public void updatePostgresProperties() throws SQLException {
 		PropertiesReader dbConfig = new PropertiesReader();
 		Map<String,String> properties = new HashMap<String, String>();
 	
-		String staging =  TestDataUtil.getCredentails("staging");
+		String staging =  TestDataUtil.getInvocationCount("stage");
 		String CONNECTION_URL = "jdbc:postgresql://stag-"+staging+"-pg-1.convirza.com:5432";
 		properties.put(EnvironmentConstants.PostgresConstants.CONNECTION_URL, CONNECTION_URL);
 		dbConfig.writeProperties(FileConstants.getPostgresConfigFile(), properties);

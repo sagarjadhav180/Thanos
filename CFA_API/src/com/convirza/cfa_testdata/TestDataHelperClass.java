@@ -2,6 +2,7 @@ package com.convirza.cfa_testdata;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class TestDataHelperClass extends BaseClass {
 	String invocationCountForPremiumNumbers;
 	
 	@BeforeClass
-	public void generateOuthTokenForCompanyAndLocationUser() throws ClientProtocolException, URISyntaxException, IOException, ParseException    {
+	public void generateOuthTokenForCompanyAndLocationUser() throws ClientProtocolException, URISyntaxException, IOException, ParseException, SQLException    {
 		
 		Map<String, Object> compConfUserHierarchy = yamlReader.readUserInfo(Constants.GroupHierarchy.COMPANY);
 		String username_compamy=compConfUserHierarchy.get(TestDataYamlConstants.UserConstants.EMAIL).toString();
@@ -49,7 +50,7 @@ public class TestDataHelperClass extends BaseClass {
 		
 		access_token_agency_admin = access_token;
 		
-//		setInvoactionCounts();
+		setInvoactionCounts();
 	}
 	
 	@Test
@@ -170,7 +171,7 @@ public class TestDataHelperClass extends BaseClass {
 	}
 	
 	
-	public void setInvoactionCounts() {
+	public void setInvoactionCounts() throws SQLException {
 		invocationCountForGroups = TestDataUtil.getInvocationCount("groups");
 		invocationCountForGroups = TestDataUtil.getInvocationCount("campaign");
 		invocationCountForGroups = TestDataUtil.getInvocationCount("t_number");

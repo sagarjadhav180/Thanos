@@ -38,12 +38,12 @@ public class BaseClass {
 		 extent.addSystemInfo("Host Name", "convirza");
 		 extent.loadConfig(new File(Directory.getCommonDir() + "extent_config.xml"));
 		 
-//		 EnvionmentHelper envionmentHelper = new EnvionmentHelper();
-//		 envionmentHelper.updateEnvironmentConfigs();
-//		 envionmentHelper.updateTestDataWithConfig();
+		 EnvionmentHelper envionmentHelper = new EnvionmentHelper();
+		 envionmentHelper.updateEnvironmentConfigs();
+		 envionmentHelper.updateTestDataWithConfig();
 		 getAccessToken();
-//		 TestDataPreparation testDataPrepare = new TestDataPreparation();
-//		 testDataPrepare.createTestData();
+		 TestDataPreparation testDataPrepare = new TestDataPreparation();
+		 testDataPrepare.createTestData();
 
 	}
 	

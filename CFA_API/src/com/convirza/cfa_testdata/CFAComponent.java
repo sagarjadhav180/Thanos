@@ -1,5 +1,6 @@
 package com.convirza.cfa_testdata;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +61,7 @@ public class CFAComponent extends BaseClass implements Components{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void setComponentData() {
+	public void setComponentData() throws SQLException {
 		removeComponents = TestDataUtil.getComponentsToAdd("component");
 //		addComponents = TestDataUtil.getComponentsToRemove("component");
 	}
