@@ -22,6 +22,6 @@ admin.site.index_title = "Welcome to User Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('contactmodule.urls')),
+    path('', include('userdetail.urls')),
 ]
  
