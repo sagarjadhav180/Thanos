@@ -20,6 +20,6 @@ class saveuserdata(models.Model):
     p_number = models.PositiveIntegerField()
     r_number = models.PositiveIntegerField()
     stage = models.PositiveIntegerField()
-    #components = models.CharField(max_length=100)
+    components = models.CharField(max_length=100)
     def __str__(self):
         return self.tableName           
