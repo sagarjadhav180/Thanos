@@ -34,7 +34,7 @@ def index(request):
         p_number = request.POST.get('premium')
         r_number = request.POST.get('reserve')
         stage = request.POST.get('stageENV')
-        components = request.POST.get('component')
+        components = request.POST.getlist('component')
         print(components, "z@@@@@@@@@@@@@@@")
         saveuserdetails1 = saveuserdata(groups=groups, campaign=campaign, t_number=t_number, calls=calls, Tags=Tags, Webhooks=Webhooks, p_number=p_number, r_number=r_number, stage=stage, components=components);
         saveuserdetails1.save();
