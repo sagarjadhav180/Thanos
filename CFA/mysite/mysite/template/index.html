@@ -80,7 +80,7 @@
           
             <input type="checkbox" id="componentId" name="componentId">
             <label for="fname">Component</label>
-            <select id="multiple-checkboxes" multiple="multiple" name="component">
+            <select  multiple="multiple" name="component">
               <option value="php">PHP</option>
               <option value="javascript">JavaScript</option>
               <option value="java">Java</option>
@@ -112,12 +112,12 @@
 
 </section>
 <!--Section: Contact v.2-->
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
     $(document).ready(function() {
         $('#multiple-checkboxes').multiselect({
           includeSelectAllOption: true,
         });
     });
-</script>
+</script> {% endcomment %}
   </body>
 </html>
