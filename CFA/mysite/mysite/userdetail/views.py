@@ -3,7 +3,6 @@ from django.contrib import messages
 from userdetail.models import logindata, saveuserdata
 from git import Repo
 from subprocess import call
-from .forms import userform
 
 
 # Create your views here.
@@ -25,8 +24,6 @@ def gitSave(request):
         print(e, type(e))
 
 def index(request):
-    context = {} 
-    context['mform'] = userform()
     if request.method == "POST":
         groups = request.POST.get('group')
         campaign = request.POST.get('campaign')
@@ -42,7 +39,7 @@ def index(request):
         saveuserdetails1 = saveuserdata(groups=groups, campaign=campaign, t_number=t_number, calls=calls, Tags=Tags, Webhooks=Webhooks, p_number=p_number, r_number=r_number, stage=stage, components=components);
         saveuserdetails1.save();
         gitSave(request);
-    return render(request, "index.html", context);
+    return render(request, "index.html");
 
 def login(request):
     if request.method == "POST":
