@@ -10,13 +10,7 @@ pipeline {
     }
     
     stages {
-		stage('Checkout Project') {
-		  steps {
-			  git branch: '${BRANCH}', 
-			  credentialsId: 'GIT_CREDENTIAL',
-			  url: 'https://github.com/sagarjadhav180/Thanos.git'
-		  }  
-		}
+		
 	    
         stage('Test Execution') {
             steps {
