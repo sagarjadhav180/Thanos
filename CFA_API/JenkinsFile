@@ -4,7 +4,11 @@ pipeline {
     environment {
         GIT_CREDENTIAL = credentials('GIT_CREDENTIAL')
     }
-
+    
+    tools {
+    	git 'Default'
+    }
+    
     stages {
 		stage('Checkout Project') {
 		  steps {
