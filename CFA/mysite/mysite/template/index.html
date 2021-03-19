@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   </head>
   <body>
   {% if messages %}
@@ -74,12 +75,16 @@
             <input type="number" name="reserve" style="width: 13%;">
           </section>
           <section>
+          
             <input type="checkbox" id="componentId" name="componentId">
             <label for="fname">Component</label>
-            <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="component">
-              
-              <option value="SpamGuardComponent">SpamGuardComponent</option>
-              <option value="CAComponent">CAComponent</option>
+            <select  multiple="multiple" name="component">
+              <option value="php">PHP</option>
+              <option value="javascript">JavaScript</option>
+              <option value="java">Java</option>
+              <option value="sql">SQL</option>
+              <option value="jquery">Jquery</option>
+              <option value=".net">.Net</option>
             </select>
           </section>
           <section>
@@ -105,5 +110,12 @@
 
 </section>
 <!--Section: Contact v.2-->
+{% comment %} <script type="text/javascript">
+    $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+          includeSelectAllOption: true,
+        });
+    });
+</script> {% endcomment %}
   </body>
 </html>
