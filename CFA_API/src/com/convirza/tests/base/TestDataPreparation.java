@@ -19,6 +19,7 @@ import org.codehaus.jackson.type.TypeReference;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -125,6 +126,53 @@ public class TestDataPreparation extends BaseClass {
 		TestDataYamlHelper.writeUserData(group, userDetails);
 		WaitExecuter.sleep(5000);
 	}
+	
+	public void createUserFromAPI( String group, String groupLevel) throws ClientProtocolException, IOException, URISyntaxException, ParseException {
+		Map<String, String> userDetails = new HashMap<String,String>();
+		
+		Map<String, Object> confUserHierarchy = yamlReader.readUserInfo(groupLevel);
+		Map<String, Object> confGroupHierarchy = yamlReader.readGroupInfo(groupLevel);
+		
+		Long group_id = Long.parseLong(group);
+		System.out.println();
+		String first_name = confUserHierarchy.get(TestDataYamlConstants.UserConstants.FIRST_NAME).toString();
+		String last_name = confUserHierarchy.get(TestDataYamlConstants.UserConstants.LAST_NAME).toString();
+		String user_email = RandomContentGenerator.createEmail();
+		Long ring_to = Long.parseLong(RandomContentGenerator.createPhoneNumber());
+		String role = confUserHierarchy.get(TestDataYamlConstants.UserConstants.ROLE).toString();
+		String user_status = confUserHierarchy.get(TestDataYamlConstants.UserConstants.STATUS).toString();
+		
+		JSONArray jsonRequest = new JSONArray();
+
+		JSONObject json = new JSONObject();
+		json.put(TestDataYamlConstants.UserConstants.GROUP_ID, group_id);
+		json.put(TestDataYamlConstants.UserConstants.FIRST_NAME, first_name);
+		json.put(TestDataYamlConstants.UserConstants.LAST_NAME, last_name);
+		json.put("user_email", user_email);
+		json.put("ring_to", ring_to);
+		json.put("user_status", "active");
+		json.put("role", role);
+
+		jsonRequest.add(json);
+
+		CloseableHttpResponse response = HelperClass.make_post_request("/v2/group/user", access_token, jsonRequest);
+		Assert.assertTrue(
+		    (response.getStatusLine().getStatusCode() == 500 || response.getStatusLine().getStatusCode() == 502
+		        || !(response.getStatusLine().getStatusCode() == 502) || response.getStatusLine().getStatusCode() == 401),
+		    "Invalid status code is displayed. " + "Returned Status: " + response.getStatusLine().getStatusCode() + " "
+		        + response.getStatusLine().getReasonPhrase());
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+		
+		
+		String id = DBUserUtils.getUserIdByEmail(user_email);
+		String userExtId = RandomContentGenerator.getRandomString();
+		DBUserUtils.updateExtIdUser(id, userExtId);
+		userDetails.put(TestDataYamlConstants.UserConstants.ID, id);
+		userDetails.put(TestDataYamlConstants.UserConstants.USER_EXT_ID, userExtId);
+		userDetails.put(TestDataYamlConstants.UserConstants.EMAIL, user_email);
+		TestDataYamlHelper.writeUserData(groupLevel, userDetails);
+		WaitExecuter.sleep(5000);
+	}
 
 	public void createTestData() throws Exception {
 			
@@ -135,13 +183,16 @@ public class TestDataPreparation extends BaseClass {
 	  createGroup(Constants.GroupHierarchy.COMPANY);
 	  createGroup(Constants.GroupHierarchy.LOCATION);
 	  
-	  WebDriver driver = BrowserInitializer.initialize("phantom");
-	  Login.login(driver);
-	  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+//	  WebDriver driver = BrowserInitializer.initialize("phantom");
+//	  Login.login(driver);
+//	  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 
-	  createUser(driver, Constants.GroupHierarchy.COMPANY);
-	  createUser(driver, Constants.GroupHierarchy.LOCATION);
+	  Map<String, Object> confGroupHierarchyCompany = yamlReader.readGroupInfo(Constants.GroupHierarchy.COMPANY);
+	  Map<String, Object> confGroupHierarchyLocation = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
+	  
+	  createUserFromAPI(confGroupHierarchyCompany.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString(), Constants.GroupHierarchy.COMPANY);
+	  createUserFromAPI(confGroupHierarchyLocation.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString(), Constants.GroupHierarchy.LOCATION);
 	  createCampaign(Constants.GroupHierarchy.AGENCY);
 	  createCampaign(Constants.GroupHierarchy.COMPANY);
 	  createCampaign(Constants.GroupHierarchy.LOCATION);
@@ -157,7 +208,7 @@ public class TestDataPreparation extends BaseClass {
 	  createCustomSource(Constants.GroupHierarchy.LOCATION);
 	  createBlacklistedNumber(Constants.GroupHierarchy.AGENCY);
 	  
-	  driver.close();
+//	  driver.close();
 		 
 		setConfig();
 	}
@@ -488,6 +539,11 @@ public class TestDataPreparation extends BaseClass {
 			        + response.getStatusLine().getReasonPhrase());
 			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 		
+			String line;
+			while((line = rd.readLine()) != null) {
+				System.out.println();
+			}
+
 			Map<String, Object> blacklistedNumbers =new HashMap<String, Object>();
 			blacklistedNumbers.put("number", number);
 			yamlReader.yamlTestData.putAll(yamlReader.setBlacklistNumberInfo(group, blacklistedNumbers));
