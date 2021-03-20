@@ -6,6 +6,7 @@ pipeline {
     }
     
     tools {
+        maven 'Maven-3.6.0'
     	git 'Default'
     }
     
