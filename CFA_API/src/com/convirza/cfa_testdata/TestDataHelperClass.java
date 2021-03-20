@@ -146,7 +146,7 @@ public class TestDataHelperClass extends BaseClass {
 	}
 
 	@Test
-	public void components() {
+	public void components() throws SQLException {
 		CFAComponent cfaComponent = new CFAComponent();
 		cfaComponent.setUp();
 		cfaComponent.componentAction();
@@ -171,9 +171,9 @@ public class TestDataHelperClass extends BaseClass {
 	
 	public void setInvoactionCounts() throws SQLException {
 		invocationCountForGroups = TestDataUtil.getInvocationCount("groups");
-		invocationCountForGroups = TestDataUtil.getInvocationCount("campaign");
-		invocationCountForGroups = TestDataUtil.getInvocationCount("t_number");
-		invocationCountForGroups = TestDataUtil.getInvocationCount("calls");
+		invocationCountForCampaigns = TestDataUtil.getInvocationCount("campaign");
+		invocationCountForTrackingNumbers = TestDataUtil.getInvocationCount("t_number");
+		invocationCountForCalls = TestDataUtil.getInvocationCount("calls");
 		invocationCountForWebhooks = TestDataUtil.getInvocationCount("Webhooks");
 		invocationCountForReserveNumbers = TestDataUtil.getInvocationCount("r_number");
 		invocationCountForPremiumNumbers = TestDataUtil.getInvocationCount("p_number");

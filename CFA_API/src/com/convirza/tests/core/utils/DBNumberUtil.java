@@ -47,12 +47,14 @@ public class DBNumberUtil {
 			e.printStackTrace();
 		}
 
-		String query3 = "Insert into org_component (org_unit_id,component_id,number_id,component_type) values ("+orgUnitID+", "+componentIdFor6thQuery+", "+componentIdFor7thQuery+",'number')";
+		String query3 = "Insert into org_component (org_unit_id,component_id,number_id,component_type) values ("+orgUnitID+", "+componentIdFor6thQuery+", "+numberID+",'number')";
 		ResultSet resultSet3 = postgres.insertQuery(query3);
 		
-		String query4 = "Insert into org_component (org_unit_id,component_id,number_id,component_type) values ("+orgUnitID+", "+componentIdFor6thQuery+", "+componentIdFor7thQuery+",'minute')";
+		String query4 = "Insert into org_component (org_unit_id,component_id,number_id,component_type) values ("+orgUnitID+", "+componentIdFor7thQuery+", "+numberID+",'minute')";
 		ResultSet resultSet4 = postgres.insertQuery(query4);
-	
+		
+		String query5 = "Insert into org_component_count (org_unit_id,component_id,secondary_total) values ("+orgUnitID+","+componentIdFor6thQuery+",1), ("+orgUnitID+","+componentIdFor7thQuery+",0)";
+		ResultSet resultSet5 = postgres.insertQuery(query5);
 	}
 	
 }

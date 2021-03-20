@@ -78,7 +78,7 @@ public class TestDataUtil {
 		
 		try {
 			while(resultSet.next()) {
-				Array entityToAdd = resultSet.getArray("component");
+				Array entityToAdd = resultSet.getArray("components");
 				componentsToAdd.add(entityToAdd.toString());
 			}
 		} catch (SQLException e) {
