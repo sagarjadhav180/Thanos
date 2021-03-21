@@ -147,6 +147,8 @@ public class CallUploadUtil extends BaseClass{
 	    
 		while ((line = rd.readLine()) != null) {
 			   // Convert response to JSON object
+			   System.out.println(line);
+			   test.log(LogStatus.INFO, line);
 			   JSONParser parser = new JSONParser();
 			   JSONObject jsonobj = (JSONObject) parser.parse(line); 
 			   String success_message = jsonobj.get("result").toString();
