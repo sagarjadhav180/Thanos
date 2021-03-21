@@ -15,9 +15,11 @@ def gitSave(request):
         origin = repo.remote('origin')
         origin.push()
         origin.push()'''
+
         call('git config credential.helper store', shell = True)
         call('git add .', shell = True)
         call('git commit --allow-empty -m "Trigger Build"', shell = True)
+        # call('git pull', shell = True) -- use this command in case more than one person are comitting 
         call('git push origin master', shell = True)
         
     except Exception as e:
@@ -48,7 +50,7 @@ def login(request):
         userlogin.save()
         if True:
             messages.success(request, 'Profile details updated.')
-            return redirect('/')
+            return redirect('/home')
         else:
             messages.error(request, 'Document deleted.')
             return render(request, "login.html");
