@@ -118,9 +118,9 @@ public class TestDataHelperClass extends BaseClass {
 		CFAModules cfaModules = new CFAModules();
 
 		for(int i=1;i<=invocationCountForCalls;i++) {
-			cfaModules.uploadCalls(access_token_agency_admin); //--agency
-			cfaModules.uploadCalls(access_token_company_admin); //--company
-			cfaModules.uploadCalls(access_token_location_admin); //--location			
+			cfaModules.uploadCalls(access_token_agency_admin, Constants.GroupHierarchy.AGENCY); //--agency
+			cfaModules.uploadCalls(access_token_company_admin, Constants.GroupHierarchy.COMPANY); //--company
+			cfaModules.uploadCalls(access_token_location_admin, Constants.GroupHierarchy.LOCATION); //--location			
 		}
 
 	}

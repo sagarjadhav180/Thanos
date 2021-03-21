@@ -38,7 +38,7 @@ public class CallUploadUtil extends BaseClass{
 	String[] fields= {"tracking_number","caller_id","ring_to" ,"disposition","call_date","file","group_id","group_ext_id","channel_id","campaign_id","line_type","assign_to","custom_source_type_1","custom_source_type_2","custom_source_type_3","custom_source_type_4","custom_source_type_5","company_name","city","zip_code","caller_name","address","state","swap_channels","is_outbound","tag_name"};	
 
 	@SuppressWarnings("unchecked")
-	public void setUpForCallUpload() throws IOException, ParseException {
+	public void setUpForCallUpload(String level) throws IOException, ParseException {
 		testdata = HelperClass.readTestData(class_name, "uploadCallWithValidCallDate");
 		caller_id = testdata.get(1);
 		payload.put("caller_id", caller_id);
@@ -72,7 +72,7 @@ public class CallUploadUtil extends BaseClass{
 		payload.put("call_date", call_date);
 		file=FileConstants.getMP3File("1mb");
 		payload.put("file", file);
-		Map<String, Object> confGroupHierarchy = yamlReader.readGroupInfo(Constants.GroupHierarchy.LOCATION);
+		Map<String, Object> confGroupHierarchy = yamlReader.readGroupInfo(level);
 		org_unit_id=confGroupHierarchy.get(TestDataYamlConstants.GroupConstants.GROUP_ID).toString();
 		payload.put("group_id", org_unit_id);  //-------------input
 //		group_ext_id=confGroupHierarchy.get(TestDataYamlConstants.GroupConstants.GROUP_EXT_ID).toString();
@@ -91,16 +91,16 @@ public class CallUploadUtil extends BaseClass{
 //		payload.put("tracking_number", tracking_number);
 		
 		
-		Map<String, Object> confTNHierarchy = yamlReader.readCallflowInfo(Constants.GroupHierarchy.LOCATION); 
+		Map<String, Object> confTNHierarchy = yamlReader.readCallflowInfo(level); 
 		channel_id=confTNHierarchy.get(TestDataYamlConstants.CallflowConstants.CHANNEL_ID).toString();
 		Map tn_obj= (Map) confTNHierarchy.get(TestDataYamlConstants.CallflowConstants.NUMBER);
 		tracking_number=tn_obj.get("phone_number").toString(); //-------------input
 		payload.put("tracking_number", tracking_number); //-------------input
 		payload.put("channel_id", channel_id);
-		Map<String, Object> confCampaignHierarchy = yamlReader.readCampaignInfo(Constants.GroupHierarchy.LOCATION);
+		Map<String, Object> confCampaignHierarchy = yamlReader.readCampaignInfo(level);
 		campaign_id=confCampaignHierarchy.get(TestDataYamlConstants.CampaignConstants.CAMPAIGN_ID).toString();
 		payload.put("campaign_id", campaign_id); //-------------input
-		Map<String, Object> confUserHierarchy = yamlReader.readUserInfo(Constants.GroupHierarchy.LOCATION);
+		Map<String, Object> confUserHierarchy = yamlReader.readUserInfo(level);
 		assign_to=confUserHierarchy.get(TestDataYamlConstants.UserConstants.EMAIL).toString();
 		payload.put("assign_to", assign_to);
 	}

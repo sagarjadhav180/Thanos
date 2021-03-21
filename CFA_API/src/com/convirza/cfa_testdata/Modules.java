@@ -14,7 +14,7 @@ public interface Modules {
 	public void uploadTrackingNumbers(String level, String accessToken) throws Exception;
 	
 	//upload calls
-	public void uploadCalls(String accessToken) throws Exception;
+	public void uploadCalls(String accessToken, String level) throws Exception;
 	
 	//upload web-hooks
 	public void uploadWebHooks(String accessToken, String org_unit_id, String webhook_Name) throws Exception;

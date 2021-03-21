@@ -144,10 +144,10 @@ public class CFAModules extends BaseClass implements Modules{
 	}
 
 	@Override
-	public void uploadCalls(String accessToken) throws Exception {
+	public void uploadCalls(String accessToken, String level) throws Exception {
 		// TODO Auto-generated method stub
 		CallUploadUtil callUploadUtil =  new CallUploadUtil();
-		callUploadUtil.setUpForCallUpload();
+		callUploadUtil.setUpForCallUpload(level);
 		callUploadUtil.uploadCallWithValidCallDate(accessToken);
 	}
 
