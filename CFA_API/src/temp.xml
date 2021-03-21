@@ -8,6 +8,10 @@
 
 			<class name="com.convirza.cfa_testdata.TestDataHelperClass" >
 			
+			<methods>
+			<include name="calls"></include>
+			</methods>
+			
 			</class>
 		</classes>
 
