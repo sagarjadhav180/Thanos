@@ -145,22 +145,27 @@ public class CallUploadUtil extends BaseClass{
 		
 		String line = "";
 	    
-		while ((line = rd.readLine()) != null) {
-			   // Convert response to JSON object
-			   System.out.println(line);
-			   test.log(LogStatus.INFO, line);
-			   JSONParser parser = new JSONParser();
-			   JSONObject jsonobj = (JSONObject) parser.parse(line); 
-			   String success_message = jsonobj.get("result").toString();
-		
-			   test.log(LogStatus.INFO, "Verifying if success message is displayed");	   
-			   String result = jsonobj.get("result").toString();
-			   String exp_result="success";
-			   
-			   Assert.assertEquals(result, exp_result,"Result did not return success message");
-			   Assert.assertNull(jsonobj.get("err"));
-			   
+		try {
+			while ((line = rd.readLine()) != null) {
+				   // Convert response to JSON object
+				   System.out.println(line);
+				   test.log(LogStatus.INFO, line);
+				   JSONParser parser = new JSONParser();
+				   JSONObject jsonobj = (JSONObject) parser.parse(line); 
+				   String success_message = jsonobj.get("result").toString();
+			
+				   test.log(LogStatus.INFO, "Verifying if success message is displayed");	   
+				   String result = jsonobj.get("result").toString();
+				   String exp_result="success";
+				   
+				   Assert.assertEquals(result, exp_result,"Result did not return success message");
+				   Assert.assertNull(jsonobj.get("err"));
+				   
+			}	
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+		
 		
 	}
 	
