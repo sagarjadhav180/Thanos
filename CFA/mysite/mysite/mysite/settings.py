@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_database',
-        'USER': 'postgres',
-        'PASSWORD': 'Password12345',
-        'HOST': 'test.cgr22uvzuj9v.us-east-2.rds.amazonaws.com',
+        'NAME': 'ct_stag',
+        'USER': 'moentekdbrw',
+        'PASSWORD': 'hyPdua14GAu6',
+        'HOST': 'stag-7-pg-1.convirza.com',
         'PORT': '5432',
     }
 }
